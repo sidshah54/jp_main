@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Bundestag corpus PDFs are large binary files (~700MB total).
+# Re-generate by running: python3 download_bundestag.py
+# The index.json metadata index IS tracked in git.
+bundestag_corpus/**/*.pdf

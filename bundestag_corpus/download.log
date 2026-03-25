@@ -1,0 +1,1006 @@
+2026-03-25 02:18:50,806  INFO      ======================================================================
+2026-03-25 02:18:50,807  INFO      Bundestag Plenarprotokolle Downloader
+2026-03-25 02:18:50,807  INFO      Corpus range: 2017-01-01 to 2025-12-31
+2026-03-25 02:18:50,807  INFO      Output dir: /home/user/jp_main/bundestag_corpus
+2026-03-25 02:18:50,807  INFO      ======================================================================
+2026-03-25 02:18:51,441  WARNING   DIP API probe returned HTTP 401 – will try fallback.
+2026-03-25 02:18:51,441  WARNING   DIP API unavailable – activating fallback enumeration.
+2026-03-25 02:18:51,441  WARNING   NOTE: Keyword filtering cannot be applied without API text access. All sessions in the date range will be downloaded. Manual keyword filtering on the PDFs will be required.
+2026-03-25 02:18:51,441  INFO      Attempting to scrape bundestag.de/protokolle …
+2026-03-25 02:18:53,548  WARNING   No direct PDF links found in bundestag.de HTML.
+2026-03-25 02:18:53,548  INFO      Running full session enumeration (HEAD probing) …
+2026-03-25 02:18:53,548  INFO      Scanning WP 18 sessions 205–245 …
+2026-03-25 02:18:55,275  INFO        WP 18 session 205  year=2017  [found]
+2026-03-25 02:18:56,505  INFO        WP 18 session 206  year=2017  [found]
+2026-03-25 02:18:57,737  INFO        WP 18 session 207  year=2017  [found]
+2026-03-25 02:18:58,969  INFO        WP 18 session 208  year=2017  [found]
+2026-03-25 02:19:00,202  INFO        WP 18 session 209  year=2017  [found]
+2026-03-25 02:19:01,434  INFO        WP 18 session 210  year=2017  [found]
+2026-03-25 02:19:02,666  INFO        WP 18 session 211  year=2017  [found]
+2026-03-25 02:19:03,898  INFO        WP 18 session 212  year=2017  [found]
+2026-03-25 02:19:05,129  INFO        WP 18 session 213  year=2017  [found]
+2026-03-25 02:19:06,360  INFO        WP 18 session 214  year=2017  [found]
+2026-03-25 02:19:07,591  INFO        WP 18 session 215  year=2017  [found]
+2026-03-25 02:19:08,823  INFO        WP 18 session 216  year=2017  [found]
+2026-03-25 02:19:10,054  INFO        WP 18 session 217  year=2017  [found]
+2026-03-25 02:19:11,289  INFO        WP 18 session 218  year=2017  [found]
+2026-03-25 02:19:12,520  INFO        WP 18 session 219  year=2017  [found]
+2026-03-25 02:19:13,751  INFO        WP 18 session 220  year=2017  [found]
+2026-03-25 02:19:14,981  INFO        WP 18 session 221  year=2017  [found]
+2026-03-25 02:19:16,212  INFO        WP 18 session 222  year=2017  [found]
+2026-03-25 02:19:17,443  INFO        WP 18 session 223  year=2017  [found]
+2026-03-25 02:19:18,674  INFO        WP 18 session 224  year=2017  [found]
+2026-03-25 02:19:19,904  INFO        WP 18 session 225  year=2017  [found]
+2026-03-25 02:19:21,136  INFO        WP 18 session 226  year=2017  [found]
+2026-03-25 02:19:22,369  INFO        WP 18 session 227  year=2017  [found]
+2026-03-25 02:19:23,600  INFO        WP 18 session 228  year=2017  [found]
+2026-03-25 02:19:24,830  INFO        WP 18 session 229  year=2017  [found]
+2026-03-25 02:19:26,062  INFO        WP 18 session 230  year=2017  [found]
+2026-03-25 02:19:27,293  INFO        WP 18 session 231  year=2017  [found]
+2026-03-25 02:19:28,524  INFO        WP 18 session 232  year=2017  [found]
+2026-03-25 02:19:29,755  INFO        WP 18 session 233  year=2017  [found]
+2026-03-25 02:19:30,985  INFO        WP 18 session 234  year=2017  [found]
+2026-03-25 02:19:32,217  INFO        WP 18 session 235  year=2017  [found]
+2026-03-25 02:19:33,448  INFO        WP 18 session 236  year=2017  [found]
+2026-03-25 02:19:34,679  INFO        WP 18 session 237  year=2017  [found]
+2026-03-25 02:19:35,910  INFO        WP 18 session 238  year=2017  [found]
+2026-03-25 02:19:37,147  INFO        WP 18 session 239  year=2017  [found]
+2026-03-25 02:19:38,378  INFO        WP 18 session 240  year=2017  [found]
+2026-03-25 02:19:39,609  INFO        WP 18 session 241  year=2017  [found]
+2026-03-25 02:19:40,839  INFO        WP 18 session 242  year=2017  [found]
+2026-03-25 02:19:42,070  INFO        WP 18 session 243  year=2017  [found]
+2026-03-25 02:19:43,301  INFO        WP 18 session 244  year=2017  [found]
+2026-03-25 02:19:44,532  INFO        WP 18 session 245  year=2017  [found]
+2026-03-25 02:19:44,532  INFO      Scanning WP 19 sessions 1–245 …
+2026-03-25 02:19:45,764  INFO        WP 19 session 001  year=2017  [found]
+2026-03-25 02:19:46,995  INFO        WP 19 session 002  year=2017  [found]
+2026-03-25 02:19:48,228  INFO        WP 19 session 003  year=2017  [found]
+2026-03-25 02:19:49,459  INFO        WP 19 session 004  year=2017  [found]
+2026-03-25 02:19:50,689  INFO        WP 19 session 005  year=2018  [found]
+2026-03-25 02:19:51,921  INFO        WP 19 session 006  year=2018  [found]
+2026-03-25 02:19:53,151  INFO        WP 19 session 007  year=2018  [found]
+2026-03-25 02:19:54,382  INFO        WP 19 session 008  year=2018  [found]
+2026-03-25 02:19:55,614  INFO        WP 19 session 009  year=2018  [found]
+2026-03-25 02:19:56,845  INFO        WP 19 session 010  year=2018  [found]
+2026-03-25 02:19:58,076  INFO        WP 19 session 011  year=2018  [found]
+2026-03-25 02:19:59,306  INFO        WP 19 session 012  year=2018  [found]
+2026-03-25 02:20:00,538  INFO        WP 19 session 013  year=2018  [found]
+2026-03-25 02:20:01,769  INFO        WP 19 session 014  year=2018  [found]
+2026-03-25 02:20:03,000  INFO        WP 19 session 015  year=2018  [found]
+2026-03-25 02:20:04,232  INFO        WP 19 session 016  year=2018  [found]
+2026-03-25 02:20:05,464  INFO        WP 19 session 017  year=2018  [found]
+2026-03-25 02:20:06,695  INFO        WP 19 session 018  year=2018  [found]
+2026-03-25 02:20:07,926  INFO        WP 19 session 019  year=2018  [found]
+2026-03-25 02:20:09,158  INFO        WP 19 session 020  year=2018  [found]
+2026-03-25 02:20:10,390  INFO        WP 19 session 021  year=2018  [found]
+2026-03-25 02:20:11,621  INFO        WP 19 session 022  year=2018  [found]
+2026-03-25 02:20:12,853  INFO        WP 19 session 023  year=2018  [found]
+2026-03-25 02:20:14,084  INFO        WP 19 session 024  year=2018  [found]
+2026-03-25 02:20:15,316  INFO        WP 19 session 025  year=2018  [found]
+2026-03-25 02:20:16,547  INFO        WP 19 session 026  year=2018  [found]
+2026-03-25 02:20:17,779  INFO        WP 19 session 027  year=2018  [found]
+2026-03-25 02:20:19,009  INFO        WP 19 session 028  year=2018  [found]
+2026-03-25 02:20:20,241  INFO        WP 19 session 029  year=2018  [found]
+2026-03-25 02:20:21,473  INFO        WP 19 session 030  year=2018  [found]
+2026-03-25 02:20:22,705  INFO        WP 19 session 031  year=2018  [found]
+2026-03-25 02:20:23,937  INFO        WP 19 session 032  year=2018  [found]
+2026-03-25 02:20:25,168  INFO        WP 19 session 033  year=2018  [found]
+2026-03-25 02:20:26,401  INFO        WP 19 session 034  year=2018  [found]
+2026-03-25 02:20:27,633  INFO        WP 19 session 035  year=2018  [found]
+2026-03-25 02:20:28,865  INFO        WP 19 session 036  year=2018  [found]
+2026-03-25 02:20:30,096  INFO        WP 19 session 037  year=2018  [found]
+2026-03-25 02:20:31,328  INFO        WP 19 session 038  year=2018  [found]
+2026-03-25 02:20:32,560  INFO        WP 19 session 039  year=2018  [found]
+2026-03-25 02:20:33,792  INFO        WP 19 session 040  year=2018  [found]
+2026-03-25 02:20:35,023  INFO        WP 19 session 041  year=2018  [found]
+2026-03-25 02:20:36,255  INFO        WP 19 session 042  year=2018  [found]
+2026-03-25 02:20:37,487  INFO        WP 19 session 043  year=2018  [found]
+2026-03-25 02:20:38,720  INFO        WP 19 session 044  year=2018  [found]
+2026-03-25 02:20:39,951  INFO        WP 19 session 045  year=2018  [found]
+2026-03-25 02:20:41,184  INFO        WP 19 session 046  year=2018  [found]
+2026-03-25 02:20:42,416  INFO        WP 19 session 047  year=2018  [found]
+2026-03-25 02:20:43,647  INFO        WP 19 session 048  year=2018  [found]
+2026-03-25 02:20:44,877  INFO        WP 19 session 049  year=2018  [found]
+2026-03-25 02:20:46,109  INFO        WP 19 session 050  year=2018  [found]
+2026-03-25 02:20:47,342  INFO        WP 19 session 051  year=2018  [found]
+2026-03-25 02:20:48,573  INFO        WP 19 session 052  year=2018  [found]
+2026-03-25 02:20:49,804  INFO        WP 19 session 053  year=2018  [found]
+2026-03-25 02:20:51,035  INFO        WP 19 session 054  year=2018  [found]
+2026-03-25 02:20:52,267  INFO        WP 19 session 055  year=2018  [found]
+2026-03-25 02:20:53,499  INFO        WP 19 session 056  year=2018  [found]
+2026-03-25 02:20:54,731  INFO        WP 19 session 057  year=2018  [found]
+2026-03-25 02:20:55,962  INFO        WP 19 session 058  year=2018  [found]
+2026-03-25 02:20:57,195  INFO        WP 19 session 059  year=2018  [found]
+2026-03-25 02:20:58,426  INFO        WP 19 session 060  year=2018  [found]
+2026-03-25 02:20:59,658  INFO        WP 19 session 061  year=2018  [found]
+2026-03-25 02:21:00,888  INFO        WP 19 session 062  year=2018  [found]
+2026-03-25 02:21:02,120  INFO        WP 19 session 063  year=2018  [found]
+2026-03-25 02:21:03,351  INFO        WP 19 session 064  year=2018  [found]
+2026-03-25 02:21:04,585  INFO        WP 19 session 065  year=2018  [found]
+2026-03-25 02:21:05,816  INFO        WP 19 session 066  year=2018  [found]
+2026-03-25 02:21:07,047  INFO        WP 19 session 067  year=2018  [found]
+2026-03-25 02:21:08,277  INFO        WP 19 session 068  year=2018  [found]
+2026-03-25 02:21:09,508  INFO        WP 19 session 069  year=2018  [found]
+2026-03-25 02:21:10,739  INFO        WP 19 session 070  year=2019  [found]
+2026-03-25 02:21:11,971  INFO        WP 19 session 071  year=2019  [found]
+2026-03-25 02:21:13,202  INFO        WP 19 session 072  year=2019  [found]
+2026-03-25 02:21:14,432  INFO        WP 19 session 073  year=2019  [found]
+2026-03-25 02:21:15,663  INFO        WP 19 session 074  year=2019  [found]
+2026-03-25 02:21:16,894  INFO        WP 19 session 075  year=2019  [found]
+2026-03-25 02:21:18,124  INFO        WP 19 session 076  year=2019  [found]
+2026-03-25 02:21:19,355  INFO        WP 19 session 077  year=2019  [found]
+2026-03-25 02:21:20,586  INFO        WP 19 session 078  year=2019  [found]
+2026-03-25 02:21:21,816  INFO        WP 19 session 079  year=2019  [found]
+2026-03-25 02:21:23,048  INFO        WP 19 session 080  year=2019  [found]
+2026-03-25 02:21:24,279  INFO        WP 19 session 081  year=2019  [found]
+2026-03-25 02:21:25,510  INFO        WP 19 session 082  year=2019  [found]
+2026-03-25 02:21:26,741  INFO        WP 19 session 083  year=2019  [found]
+2026-03-25 02:21:27,973  INFO        WP 19 session 084  year=2019  [found]
+2026-03-25 02:21:29,204  INFO        WP 19 session 085  year=2019  [found]
+2026-03-25 02:21:30,435  INFO        WP 19 session 086  year=2019  [found]
+2026-03-25 02:21:31,666  INFO        WP 19 session 087  year=2019  [found]
+2026-03-25 02:21:32,897  INFO        WP 19 session 088  year=2019  [found]
+2026-03-25 02:21:34,128  INFO        WP 19 session 089  year=2019  [found]
+2026-03-25 02:21:35,360  INFO        WP 19 session 090  year=2019  [found]
+2026-03-25 02:21:36,592  INFO        WP 19 session 091  year=2019  [found]
+2026-03-25 02:21:37,822  INFO        WP 19 session 092  year=2019  [found]
+2026-03-25 02:21:39,054  INFO        WP 19 session 093  year=2019  [found]
+2026-03-25 02:21:40,284  INFO        WP 19 session 094  year=2019  [found]
+2026-03-25 02:21:41,515  INFO        WP 19 session 095  year=2019  [found]
+2026-03-25 02:21:42,746  INFO        WP 19 session 096  year=2019  [found]
+2026-03-25 02:21:43,977  INFO        WP 19 session 097  year=2019  [found]
+2026-03-25 02:21:45,207  INFO        WP 19 session 098  year=2019  [found]
+2026-03-25 02:21:46,438  INFO        WP 19 session 099  year=2019  [found]
+2026-03-25 02:21:47,669  INFO        WP 19 session 100  year=2019  [found]
+2026-03-25 02:21:48,899  INFO        WP 19 session 101  year=2019  [found]
+2026-03-25 02:21:50,130  INFO        WP 19 session 102  year=2019  [found]
+2026-03-25 02:21:51,361  INFO        WP 19 session 103  year=2019  [found]
+2026-03-25 02:21:52,593  INFO        WP 19 session 104  year=2019  [found]
+2026-03-25 02:21:53,823  INFO        WP 19 session 105  year=2019  [found]
+2026-03-25 02:21:55,054  INFO        WP 19 session 106  year=2019  [found]
+2026-03-25 02:21:56,286  INFO        WP 19 session 107  year=2019  [found]
+2026-03-25 02:21:57,516  INFO        WP 19 session 108  year=2019  [found]
+2026-03-25 02:21:58,749  INFO        WP 19 session 109  year=2019  [found]
+2026-03-25 02:21:59,980  INFO        WP 19 session 110  year=2019  [found]
+2026-03-25 02:22:01,212  INFO        WP 19 session 111  year=2019  [found]
+2026-03-25 02:22:02,443  INFO        WP 19 session 112  year=2019  [found]
+2026-03-25 02:22:03,676  INFO        WP 19 session 113  year=2019  [found]
+2026-03-25 02:22:04,907  INFO        WP 19 session 114  year=2019  [found]
+2026-03-25 02:22:06,138  INFO        WP 19 session 115  year=2019  [found]
+2026-03-25 02:22:07,370  INFO        WP 19 session 116  year=2019  [found]
+2026-03-25 02:22:08,601  INFO        WP 19 session 117  year=2019  [found]
+2026-03-25 02:22:09,833  INFO        WP 19 session 118  year=2019  [found]
+2026-03-25 02:22:11,064  INFO        WP 19 session 119  year=2019  [found]
+2026-03-25 02:22:12,295  INFO        WP 19 session 120  year=2019  [found]
+2026-03-25 02:22:13,527  INFO        WP 19 session 121  year=2019  [found]
+2026-03-25 02:22:14,758  INFO        WP 19 session 122  year=2019  [found]
+2026-03-25 02:22:15,989  INFO        WP 19 session 123  year=2019  [found]
+2026-03-25 02:22:17,221  INFO        WP 19 session 124  year=2019  [found]
+2026-03-25 02:22:18,454  INFO        WP 19 session 125  year=2019  [found]
+2026-03-25 02:22:19,686  INFO        WP 19 session 126  year=2019  [found]
+2026-03-25 02:22:20,918  INFO        WP 19 session 127  year=2019  [found]
+2026-03-25 02:22:22,149  INFO        WP 19 session 128  year=2019  [found]
+2026-03-25 02:22:23,380  INFO        WP 19 session 129  year=2019  [found]
+2026-03-25 02:22:24,611  INFO        WP 19 session 130  year=2019  [found]
+2026-03-25 02:22:25,845  INFO        WP 19 session 131  year=2019  [found]
+2026-03-25 02:22:27,077  INFO        WP 19 session 132  year=2019  [found]
+2026-03-25 02:22:28,308  INFO        WP 19 session 133  year=2019  [found]
+2026-03-25 02:22:29,539  INFO        WP 19 session 134  year=2019  [found]
+2026-03-25 02:22:30,770  INFO        WP 19 session 135  year=2019  [found]
+2026-03-25 02:22:32,002  INFO        WP 19 session 136  year=2019  [found]
+2026-03-25 02:22:33,233  INFO        WP 19 session 137  year=2019  [found]
+2026-03-25 02:22:34,464  INFO        WP 19 session 138  year=2019  [found]
+2026-03-25 02:22:35,696  INFO        WP 19 session 139  year=2019  [found]
+2026-03-25 02:22:36,927  INFO        WP 19 session 140  year=2020  [found]
+2026-03-25 02:22:38,158  INFO        WP 19 session 141  year=2020  [found]
+2026-03-25 02:22:39,389  INFO        WP 19 session 142  year=2020  [found]
+2026-03-25 02:22:40,621  INFO        WP 19 session 143  year=2020  [found]
+2026-03-25 02:22:41,852  INFO        WP 19 session 144  year=2020  [found]
+2026-03-25 02:22:43,083  INFO        WP 19 session 145  year=2020  [found]
+2026-03-25 02:22:44,314  INFO        WP 19 session 146  year=2020  [found]
+2026-03-25 02:22:45,546  INFO        WP 19 session 147  year=2020  [found]
+2026-03-25 02:22:46,778  INFO        WP 19 session 148  year=2020  [found]
+2026-03-25 02:22:48,009  INFO        WP 19 session 149  year=2020  [found]
+2026-03-25 02:22:49,241  INFO        WP 19 session 150  year=2020  [found]
+2026-03-25 02:22:50,473  INFO        WP 19 session 151  year=2020  [found]
+2026-03-25 02:22:51,705  INFO        WP 19 session 152  year=2020  [found]
+2026-03-25 02:22:52,937  INFO        WP 19 session 153  year=2020  [found]
+2026-03-25 02:22:54,168  INFO        WP 19 session 154  year=2020  [found]
+2026-03-25 02:22:55,400  INFO        WP 19 session 155  year=2020  [found]
+2026-03-25 02:22:56,632  INFO        WP 19 session 156  year=2020  [found]
+2026-03-25 02:22:57,863  INFO        WP 19 session 157  year=2020  [found]
+2026-03-25 02:22:59,094  INFO        WP 19 session 158  year=2020  [found]
+2026-03-25 02:23:00,326  INFO        WP 19 session 159  year=2020  [found]
+2026-03-25 02:23:01,557  INFO        WP 19 session 160  year=2020  [found]
+2026-03-25 02:23:02,789  INFO        WP 19 session 161  year=2020  [found]
+2026-03-25 02:23:04,021  INFO        WP 19 session 162  year=2020  [found]
+2026-03-25 02:23:05,253  INFO        WP 19 session 163  year=2020  [found]
+2026-03-25 02:23:06,484  INFO        WP 19 session 164  year=2020  [found]
+2026-03-25 02:23:07,715  INFO        WP 19 session 165  year=2020  [found]
+2026-03-25 02:23:08,946  INFO        WP 19 session 166  year=2020  [found]
+2026-03-25 02:23:10,177  INFO        WP 19 session 167  year=2020  [found]
+2026-03-25 02:23:11,408  INFO        WP 19 session 168  year=2020  [found]
+2026-03-25 02:23:12,641  INFO        WP 19 session 169  year=2020  [found]
+2026-03-25 02:23:13,870  INFO        WP 19 session 170  year=2020  [found]
+2026-03-25 02:23:15,101  INFO        WP 19 session 171  year=2020  [found]
+2026-03-25 02:23:16,330  INFO        WP 19 session 172  year=2020  [found]
+2026-03-25 02:23:17,560  INFO        WP 19 session 173  year=2020  [found]
+2026-03-25 02:23:18,790  INFO        WP 19 session 174  year=2020  [found]
+2026-03-25 02:23:20,021  INFO        WP 19 session 175  year=2020  [found]
+2026-03-25 02:23:21,251  INFO        WP 19 session 176  year=2020  [found]
+2026-03-25 02:23:22,482  INFO        WP 19 session 177  year=2020  [found]
+2026-03-25 02:23:23,711  INFO        WP 19 session 178  year=2020  [found]
+2026-03-25 02:23:24,942  INFO        WP 19 session 179  year=2020  [found]
+2026-03-25 02:23:26,172  INFO        WP 19 session 180  year=2020  [found]
+2026-03-25 02:23:27,402  INFO        WP 19 session 181  year=2020  [found]
+2026-03-25 02:23:28,631  INFO        WP 19 session 182  year=2020  [found]
+2026-03-25 02:23:29,861  INFO        WP 19 session 183  year=2020  [found]
+2026-03-25 02:23:31,091  INFO        WP 19 session 184  year=2020  [found]
+2026-03-25 02:23:32,321  INFO        WP 19 session 185  year=2020  [found]
+2026-03-25 02:23:33,552  INFO        WP 19 session 186  year=2020  [found]
+2026-03-25 02:23:34,783  INFO        WP 19 session 187  year=2020  [found]
+2026-03-25 02:23:36,012  INFO        WP 19 session 188  year=2020  [found]
+2026-03-25 02:23:37,242  INFO        WP 19 session 189  year=2020  [found]
+2026-03-25 02:23:38,473  INFO        WP 19 session 190  year=2020  [found]
+2026-03-25 02:23:39,703  INFO        WP 19 session 191  year=2020  [found]
+2026-03-25 02:23:40,933  INFO        WP 19 session 192  year=2020  [found]
+2026-03-25 02:23:42,163  INFO        WP 19 session 193  year=2020  [found]
+2026-03-25 02:23:43,393  INFO        WP 19 session 194  year=2020  [found]
+2026-03-25 02:23:44,623  INFO        WP 19 session 195  year=2020  [found]
+2026-03-25 02:23:45,852  INFO        WP 19 session 196  year=2020  [found]
+2026-03-25 02:23:47,082  INFO        WP 19 session 197  year=2020  [found]
+2026-03-25 02:23:48,313  INFO        WP 19 session 198  year=2020  [found]
+2026-03-25 02:23:49,542  INFO        WP 19 session 199  year=2020  [found]
+2026-03-25 02:23:50,773  INFO        WP 19 session 200  year=2020  [found]
+2026-03-25 02:23:52,003  INFO        WP 19 session 201  year=2020  [found]
+2026-03-25 02:23:53,233  INFO        WP 19 session 202  year=2020  [found]
+2026-03-25 02:23:54,463  INFO        WP 19 session 203  year=2020  [found]
+2026-03-25 02:23:55,693  INFO        WP 19 session 204  year=2020  [found]
+2026-03-25 02:23:56,926  INFO        WP 19 session 205  year=2020  [found]
+2026-03-25 02:23:58,156  INFO        WP 19 session 206  year=2020  [found]
+2026-03-25 02:23:59,387  INFO        WP 19 session 207  year=2020  [found]
+2026-03-25 02:24:00,616  INFO        WP 19 session 208  year=2020  [found]
+2026-03-25 02:24:01,847  INFO        WP 19 session 209  year=2021  [found]
+2026-03-25 02:24:03,078  INFO        WP 19 session 210  year=2021  [found]
+2026-03-25 02:24:04,308  INFO        WP 19 session 211  year=2021  [found]
+2026-03-25 02:24:05,538  INFO        WP 19 session 212  year=2021  [found]
+2026-03-25 02:24:06,770  INFO        WP 19 session 213  year=2021  [found]
+2026-03-25 02:24:08,000  INFO        WP 19 session 214  year=2021  [found]
+2026-03-25 02:24:09,232  INFO        WP 19 session 215  year=2021  [found]
+2026-03-25 02:24:10,461  INFO        WP 19 session 216  year=2021  [found]
+2026-03-25 02:24:11,692  INFO        WP 19 session 217  year=2021  [found]
+2026-03-25 02:24:12,922  INFO        WP 19 session 218  year=2021  [found]
+2026-03-25 02:24:14,152  INFO        WP 19 session 219  year=2021  [found]
+2026-03-25 02:24:15,383  INFO        WP 19 session 220  year=2021  [found]
+2026-03-25 02:24:16,613  INFO        WP 19 session 221  year=2021  [found]
+2026-03-25 02:24:17,844  INFO        WP 19 session 222  year=2021  [found]
+2026-03-25 02:24:19,076  INFO        WP 19 session 223  year=2021  [found]
+2026-03-25 02:24:20,308  INFO        WP 19 session 224  year=2021  [found]
+2026-03-25 02:24:21,539  INFO        WP 19 session 225  year=2021  [found]
+2026-03-25 02:24:22,770  INFO        WP 19 session 226  year=2021  [found]
+2026-03-25 02:24:24,007  INFO        WP 19 session 227  year=2021  [found]
+2026-03-25 02:24:25,237  INFO        WP 19 session 228  year=2021  [found]
+2026-03-25 02:24:26,467  INFO        WP 19 session 229  year=2021  [found]
+2026-03-25 02:24:27,697  INFO        WP 19 session 230  year=2021  [found]
+2026-03-25 02:24:28,927  INFO        WP 19 session 231  year=2021  [found]
+2026-03-25 02:24:30,157  INFO        WP 19 session 232  year=2021  [found]
+2026-03-25 02:24:31,387  INFO        WP 19 session 233  year=2021  [found]
+2026-03-25 02:24:32,623  INFO        WP 19 session 234  year=2021  [found]
+2026-03-25 02:24:33,853  INFO        WP 19 session 235  year=2021  [found]
+2026-03-25 02:24:35,083  INFO        WP 19 session 236  year=2021  [found]
+2026-03-25 02:24:36,314  INFO        WP 19 session 237  year=2021  [found]
+2026-03-25 02:24:37,544  INFO        WP 19 session 238  year=2021  [found]
+2026-03-25 02:24:38,775  INFO        WP 19 session 239  year=2021  [found]
+2026-03-25 02:24:46,155  INFO      Scanning WP 20 sessions 1–225 …
+2026-03-25 02:24:47,386  INFO        WP 20 session 001  year=2022  [found]
+2026-03-25 02:24:48,618  INFO        WP 20 session 002  year=2022  [found]
+2026-03-25 02:24:49,848  INFO        WP 20 session 003  year=2022  [found]
+2026-03-25 02:24:51,078  INFO        WP 20 session 004  year=2022  [found]
+2026-03-25 02:24:52,308  INFO        WP 20 session 005  year=2022  [found]
+2026-03-25 02:24:53,538  INFO        WP 20 session 006  year=2022  [found]
+2026-03-25 02:24:54,768  INFO        WP 20 session 007  year=2022  [found]
+2026-03-25 02:24:55,997  INFO        WP 20 session 008  year=2022  [found]
+2026-03-25 02:24:57,228  INFO        WP 20 session 009  year=2022  [found]
+2026-03-25 02:24:58,458  INFO        WP 20 session 010  year=2022  [found]
+2026-03-25 02:24:59,688  INFO        WP 20 session 011  year=2022  [found]
+2026-03-25 02:25:00,918  INFO        WP 20 session 012  year=2022  [found]
+2026-03-25 02:25:02,148  INFO        WP 20 session 013  year=2022  [found]
+2026-03-25 02:25:03,377  INFO        WP 20 session 014  year=2022  [found]
+2026-03-25 02:25:04,607  INFO        WP 20 session 015  year=2022  [found]
+2026-03-25 02:25:05,838  INFO        WP 20 session 016  year=2022  [found]
+2026-03-25 02:25:07,067  INFO        WP 20 session 017  year=2022  [found]
+2026-03-25 02:25:08,298  INFO        WP 20 session 018  year=2022  [found]
+2026-03-25 02:25:09,529  INFO        WP 20 session 019  year=2022  [found]
+2026-03-25 02:25:10,758  INFO        WP 20 session 020  year=2022  [found]
+2026-03-25 02:25:11,988  INFO        WP 20 session 021  year=2022  [found]
+2026-03-25 02:25:13,219  INFO        WP 20 session 022  year=2022  [found]
+2026-03-25 02:25:14,450  INFO        WP 20 session 023  year=2022  [found]
+2026-03-25 02:25:15,680  INFO        WP 20 session 024  year=2022  [found]
+2026-03-25 02:25:16,910  INFO        WP 20 session 025  year=2022  [found]
+2026-03-25 02:25:18,142  INFO        WP 20 session 026  year=2022  [found]
+2026-03-25 02:25:19,371  INFO        WP 20 session 027  year=2022  [found]
+2026-03-25 02:25:20,602  INFO        WP 20 session 028  year=2022  [found]
+2026-03-25 02:25:21,832  INFO        WP 20 session 029  year=2022  [found]
+2026-03-25 02:25:23,063  INFO        WP 20 session 030  year=2022  [found]
+2026-03-25 02:25:24,292  INFO        WP 20 session 031  year=2022  [found]
+2026-03-25 02:25:25,522  INFO        WP 20 session 032  year=2022  [found]
+2026-03-25 02:25:26,753  INFO        WP 20 session 033  year=2022  [found]
+2026-03-25 02:25:27,983  INFO        WP 20 session 034  year=2022  [found]
+2026-03-25 02:25:29,215  INFO        WP 20 session 035  year=2022  [found]
+2026-03-25 02:25:30,445  INFO        WP 20 session 036  year=2022  [found]
+2026-03-25 02:25:31,675  INFO        WP 20 session 037  year=2022  [found]
+2026-03-25 02:25:32,905  INFO        WP 20 session 038  year=2022  [found]
+2026-03-25 02:25:34,134  INFO        WP 20 session 039  year=2022  [found]
+2026-03-25 02:25:35,364  INFO        WP 20 session 040  year=2022  [found]
+2026-03-25 02:25:36,594  INFO        WP 20 session 041  year=2022  [found]
+2026-03-25 02:25:37,824  INFO        WP 20 session 042  year=2022  [found]
+2026-03-25 02:25:39,054  INFO        WP 20 session 043  year=2022  [found]
+2026-03-25 02:25:40,284  INFO        WP 20 session 044  year=2022  [found]
+2026-03-25 02:25:41,515  INFO        WP 20 session 045  year=2022  [found]
+2026-03-25 02:25:42,745  INFO        WP 20 session 046  year=2022  [found]
+2026-03-25 02:25:43,975  INFO        WP 20 session 047  year=2022  [found]
+2026-03-25 02:25:45,204  INFO        WP 20 session 048  year=2022  [found]
+2026-03-25 02:25:46,434  INFO        WP 20 session 049  year=2022  [found]
+2026-03-25 02:25:47,664  INFO        WP 20 session 050  year=2022  [found]
+2026-03-25 02:25:48,894  INFO        WP 20 session 051  year=2022  [found]
+2026-03-25 02:25:50,125  INFO        WP 20 session 052  year=2022  [found]
+2026-03-25 02:25:51,355  INFO        WP 20 session 053  year=2022  [found]
+2026-03-25 02:25:52,586  INFO        WP 20 session 054  year=2022  [found]
+2026-03-25 02:25:53,815  INFO        WP 20 session 055  year=2022  [found]
+2026-03-25 02:25:55,046  INFO        WP 20 session 056  year=2022  [found]
+2026-03-25 02:25:56,275  INFO        WP 20 session 057  year=2022  [found]
+2026-03-25 02:25:57,505  INFO        WP 20 session 058  year=2022  [found]
+2026-03-25 02:25:58,734  INFO        WP 20 session 059  year=2022  [found]
+2026-03-25 02:25:59,964  INFO        WP 20 session 060  year=2022  [found]
+2026-03-25 02:26:01,193  INFO        WP 20 session 061  year=2022  [found]
+2026-03-25 02:26:02,423  INFO        WP 20 session 062  year=2022  [found]
+2026-03-25 02:26:03,653  INFO        WP 20 session 063  year=2022  [found]
+2026-03-25 02:26:04,883  INFO        WP 20 session 064  year=2022  [found]
+2026-03-25 02:26:06,113  INFO        WP 20 session 065  year=2022  [found]
+2026-03-25 02:26:07,344  INFO        WP 20 session 066  year=2022  [found]
+2026-03-25 02:26:08,574  INFO        WP 20 session 067  year=2022  [found]
+2026-03-25 02:26:09,803  INFO        WP 20 session 068  year=2022  [found]
+2026-03-25 02:26:11,033  INFO        WP 20 session 069  year=2022  [found]
+2026-03-25 02:26:12,263  INFO        WP 20 session 070  year=2022  [found]
+2026-03-25 02:26:13,493  INFO        WP 20 session 071  year=2022  [found]
+2026-03-25 02:26:14,725  INFO        WP 20 session 072  year=2022  [found]
+2026-03-25 02:26:15,955  INFO        WP 20 session 073  year=2022  [found]
+2026-03-25 02:26:17,185  INFO        WP 20 session 074  year=2022  [found]
+2026-03-25 02:26:18,415  INFO        WP 20 session 075  year=2022  [found]
+2026-03-25 02:26:19,645  INFO        WP 20 session 076  year=2022  [found]
+2026-03-25 02:26:20,876  INFO        WP 20 session 077  year=2022  [found]
+2026-03-25 02:26:22,106  INFO        WP 20 session 078  year=2023  [found]
+2026-03-25 02:26:23,336  INFO        WP 20 session 079  year=2023  [found]
+2026-03-25 02:26:24,567  INFO        WP 20 session 080  year=2023  [found]
+2026-03-25 02:26:25,797  INFO        WP 20 session 081  year=2023  [found]
+2026-03-25 02:26:27,027  INFO        WP 20 session 082  year=2023  [found]
+2026-03-25 02:26:28,257  INFO        WP 20 session 083  year=2023  [found]
+2026-03-25 02:26:29,488  INFO        WP 20 session 084  year=2023  [found]
+2026-03-25 02:26:30,718  INFO        WP 20 session 085  year=2023  [found]
+2026-03-25 02:26:31,949  INFO        WP 20 session 086  year=2023  [found]
+2026-03-25 02:26:33,179  INFO        WP 20 session 087  year=2023  [found]
+2026-03-25 02:26:34,410  INFO        WP 20 session 088  year=2023  [found]
+2026-03-25 02:26:35,640  INFO        WP 20 session 089  year=2023  [found]
+2026-03-25 02:26:36,870  INFO        WP 20 session 090  year=2023  [found]
+2026-03-25 02:26:38,100  INFO        WP 20 session 091  year=2023  [found]
+2026-03-25 02:26:39,330  INFO        WP 20 session 092  year=2023  [found]
+2026-03-25 02:26:40,562  INFO        WP 20 session 093  year=2023  [found]
+2026-03-25 02:26:41,792  INFO        WP 20 session 094  year=2023  [found]
+2026-03-25 02:26:43,022  INFO        WP 20 session 095  year=2023  [found]
+2026-03-25 02:26:44,252  INFO        WP 20 session 096  year=2023  [found]
+2026-03-25 02:26:45,481  INFO        WP 20 session 097  year=2023  [found]
+2026-03-25 02:26:46,712  INFO        WP 20 session 098  year=2023  [found]
+2026-03-25 02:26:47,941  INFO        WP 20 session 099  year=2023  [found]
+2026-03-25 02:26:49,171  INFO        WP 20 session 100  year=2023  [found]
+2026-03-25 02:26:50,400  INFO        WP 20 session 101  year=2023  [found]
+2026-03-25 02:26:51,631  INFO        WP 20 session 102  year=2023  [found]
+2026-03-25 02:26:52,861  INFO        WP 20 session 103  year=2023  [found]
+2026-03-25 02:26:54,092  INFO        WP 20 session 104  year=2023  [found]
+2026-03-25 02:26:55,322  INFO        WP 20 session 105  year=2023  [found]
+2026-03-25 02:26:56,552  INFO        WP 20 session 106  year=2023  [found]
+2026-03-25 02:26:57,782  INFO        WP 20 session 107  year=2023  [found]
+2026-03-25 02:26:59,012  INFO        WP 20 session 108  year=2023  [found]
+2026-03-25 02:27:00,242  INFO        WP 20 session 109  year=2023  [found]
+2026-03-25 02:27:01,472  INFO        WP 20 session 110  year=2023  [found]
+2026-03-25 02:27:02,702  INFO        WP 20 session 111  year=2023  [found]
+2026-03-25 02:27:03,932  INFO        WP 20 session 112  year=2023  [found]
+2026-03-25 02:27:05,162  INFO        WP 20 session 113  year=2023  [found]
+2026-03-25 02:27:06,392  INFO        WP 20 session 114  year=2023  [found]
+2026-03-25 02:27:07,621  INFO        WP 20 session 115  year=2023  [found]
+2026-03-25 02:27:08,851  INFO        WP 20 session 116  year=2023  [found]
+2026-03-25 02:27:10,080  INFO        WP 20 session 117  year=2023  [found]
+2026-03-25 02:27:11,309  INFO        WP 20 session 118  year=2023  [found]
+2026-03-25 02:27:12,540  INFO        WP 20 session 119  year=2023  [found]
+2026-03-25 02:27:13,769  INFO        WP 20 session 120  year=2023  [found]
+2026-03-25 02:27:14,999  INFO        WP 20 session 121  year=2023  [found]
+2026-03-25 02:27:16,228  INFO        WP 20 session 122  year=2023  [found]
+2026-03-25 02:27:17,458  INFO        WP 20 session 123  year=2023  [found]
+2026-03-25 02:27:18,688  INFO        WP 20 session 124  year=2023  [found]
+2026-03-25 02:27:19,918  INFO        WP 20 session 125  year=2023  [found]
+2026-03-25 02:27:21,147  INFO        WP 20 session 126  year=2023  [found]
+2026-03-25 02:27:22,377  INFO        WP 20 session 127  year=2023  [found]
+2026-03-25 02:27:23,608  INFO        WP 20 session 128  year=2023  [found]
+2026-03-25 02:27:24,838  INFO        WP 20 session 129  year=2023  [found]
+2026-03-25 02:27:26,069  INFO        WP 20 session 130  year=2023  [found]
+2026-03-25 02:27:27,299  INFO        WP 20 session 131  year=2023  [found]
+2026-03-25 02:27:28,528  INFO        WP 20 session 132  year=2023  [found]
+2026-03-25 02:27:29,758  INFO        WP 20 session 133  year=2023  [found]
+2026-03-25 02:27:30,988  INFO        WP 20 session 134  year=2023  [found]
+2026-03-25 02:27:32,218  INFO        WP 20 session 135  year=2023  [found]
+2026-03-25 02:27:33,448  INFO        WP 20 session 136  year=2023  [found]
+2026-03-25 02:27:34,678  INFO        WP 20 session 137  year=2023  [found]
+2026-03-25 02:27:35,908  INFO        WP 20 session 138  year=2023  [found]
+2026-03-25 02:27:37,138  INFO        WP 20 session 139  year=2023  [found]
+2026-03-25 02:27:38,368  INFO        WP 20 session 140  year=2023  [found]
+2026-03-25 02:27:39,598  INFO        WP 20 session 141  year=2023  [found]
+2026-03-25 02:27:40,827  INFO        WP 20 session 142  year=2023  [found]
+2026-03-25 02:27:42,058  INFO        WP 20 session 143  year=2024  [found]
+2026-03-25 02:27:43,288  INFO        WP 20 session 144  year=2024  [found]
+2026-03-25 02:27:44,518  INFO        WP 20 session 145  year=2024  [found]
+2026-03-25 02:27:45,748  INFO        WP 20 session 146  year=2024  [found]
+2026-03-25 02:27:46,978  INFO        WP 20 session 147  year=2024  [found]
+2026-03-25 02:27:48,209  INFO        WP 20 session 148  year=2024  [found]
+2026-03-25 02:27:49,440  INFO        WP 20 session 149  year=2024  [found]
+2026-03-25 02:27:50,672  INFO        WP 20 session 150  year=2024  [found]
+2026-03-25 02:27:51,902  INFO        WP 20 session 151  year=2024  [found]
+2026-03-25 02:27:53,133  INFO        WP 20 session 152  year=2024  [found]
+2026-03-25 02:27:54,362  INFO        WP 20 session 153  year=2024  [found]
+2026-03-25 02:27:55,592  INFO        WP 20 session 154  year=2024  [found]
+2026-03-25 02:27:56,822  INFO        WP 20 session 155  year=2024  [found]
+2026-03-25 02:27:58,052  INFO        WP 20 session 156  year=2024  [found]
+2026-03-25 02:27:59,282  INFO        WP 20 session 157  year=2024  [found]
+2026-03-25 02:28:00,512  INFO        WP 20 session 158  year=2024  [found]
+2026-03-25 02:28:01,743  INFO        WP 20 session 159  year=2024  [found]
+2026-03-25 02:28:02,974  INFO        WP 20 session 160  year=2024  [found]
+2026-03-25 02:28:04,203  INFO        WP 20 session 161  year=2024  [found]
+2026-03-25 02:28:05,433  INFO        WP 20 session 162  year=2024  [found]
+2026-03-25 02:28:06,662  INFO        WP 20 session 163  year=2024  [found]
+2026-03-25 02:28:07,892  INFO        WP 20 session 164  year=2024  [found]
+2026-03-25 02:28:09,122  INFO        WP 20 session 165  year=2024  [found]
+2026-03-25 02:28:10,351  INFO        WP 20 session 166  year=2024  [found]
+2026-03-25 02:28:11,581  INFO        WP 20 session 167  year=2024  [found]
+2026-03-25 02:28:12,812  INFO        WP 20 session 168  year=2024  [found]
+2026-03-25 02:28:14,043  INFO        WP 20 session 169  year=2024  [found]
+2026-03-25 02:28:15,274  INFO        WP 20 session 170  year=2024  [found]
+2026-03-25 02:28:16,503  INFO        WP 20 session 171  year=2024  [found]
+2026-03-25 02:28:17,734  INFO        WP 20 session 172  year=2024  [found]
+2026-03-25 02:28:18,964  INFO        WP 20 session 173  year=2024  [found]
+2026-03-25 02:28:20,193  INFO        WP 20 session 174  year=2024  [found]
+2026-03-25 02:28:21,424  INFO        WP 20 session 175  year=2024  [found]
+2026-03-25 02:28:22,656  INFO        WP 20 session 176  year=2024  [found]
+2026-03-25 02:28:23,886  INFO        WP 20 session 177  year=2024  [found]
+2026-03-25 02:28:25,116  INFO        WP 20 session 178  year=2024  [found]
+2026-03-25 02:28:26,346  INFO        WP 20 session 179  year=2024  [found]
+2026-03-25 02:28:27,576  INFO        WP 20 session 180  year=2024  [found]
+2026-03-25 02:28:28,810  INFO        WP 20 session 181  year=2024  [found]
+2026-03-25 02:28:30,040  INFO        WP 20 session 182  year=2024  [found]
+2026-03-25 02:28:31,270  INFO        WP 20 session 183  year=2024  [found]
+2026-03-25 02:28:32,500  INFO        WP 20 session 184  year=2024  [found]
+2026-03-25 02:28:33,731  INFO        WP 20 session 185  year=2024  [found]
+2026-03-25 02:28:34,961  INFO        WP 20 session 186  year=2024  [found]
+2026-03-25 02:28:36,192  INFO        WP 20 session 187  year=2024  [found]
+2026-03-25 02:28:37,423  INFO        WP 20 session 188  year=2024  [found]
+2026-03-25 02:28:38,653  INFO        WP 20 session 189  year=2024  [found]
+2026-03-25 02:28:39,883  INFO        WP 20 session 190  year=2024  [found]
+2026-03-25 02:28:41,113  INFO        WP 20 session 191  year=2024  [found]
+2026-03-25 02:28:42,343  INFO        WP 20 session 192  year=2024  [found]
+2026-03-25 02:28:43,573  INFO        WP 20 session 193  year=2024  [found]
+2026-03-25 02:28:44,803  INFO        WP 20 session 194  year=2024  [found]
+2026-03-25 02:28:46,033  INFO        WP 20 session 195  year=2024  [found]
+2026-03-25 02:28:47,263  INFO        WP 20 session 196  year=2024  [found]
+2026-03-25 02:28:48,493  INFO        WP 20 session 197  year=2024  [found]
+2026-03-25 02:28:49,723  INFO        WP 20 session 198  year=2024  [found]
+2026-03-25 02:28:50,953  INFO        WP 20 session 199  year=2024  [found]
+2026-03-25 02:28:52,182  INFO        WP 20 session 200  year=2024  [found]
+2026-03-25 02:28:53,412  INFO        WP 20 session 201  year=2024  [found]
+2026-03-25 02:28:54,642  INFO        WP 20 session 202  year=2024  [found]
+2026-03-25 02:28:55,871  INFO        WP 20 session 203  year=2024  [found]
+2026-03-25 02:28:57,102  INFO        WP 20 session 204  year=2024  [found]
+2026-03-25 02:28:58,331  INFO        WP 20 session 205  year=2024  [found]
+2026-03-25 02:28:59,561  INFO        WP 20 session 206  year=2024  [found]
+2026-03-25 02:29:00,792  INFO        WP 20 session 207  year=2025  [found]
+2026-03-25 02:29:02,022  INFO        WP 20 session 208  year=2024  [found]
+2026-03-25 02:29:03,252  INFO        WP 20 session 209  year=2025  [found]
+2026-03-25 02:29:04,482  INFO        WP 20 session 210  year=2025  [found]
+2026-03-25 02:29:05,712  INFO        WP 20 session 211  year=2025  [found]
+2026-03-25 02:29:06,942  INFO        WP 20 session 212  year=2025  [found]
+2026-03-25 02:29:08,172  INFO        WP 20 session 213  year=2025  [found]
+2026-03-25 02:29:09,403  INFO        WP 20 session 214  year=2025  [found]
+2026-03-25 02:29:21,711  INFO        WP 20: 10 consecutive misses after session 224 – stopping scan.
+2026-03-25 02:29:21,712  INFO      Proceeding to download 494 PDFs.
+2026-03-25 02:29:23,809  INFO        Downloaded 18_205_unknown.pdf  (839 KB)
+2026-03-25 02:29:24,560  INFO        Downloaded 18_206_unknown.pdf  (2608 KB)
+2026-03-25 02:29:25,656  INFO        Downloaded 18_207_unknown.pdf  (825 KB)
+2026-03-25 02:29:27,010  INFO        Downloaded 18_208_unknown.pdf  (728 KB)
+2026-03-25 02:29:28,495  INFO        Downloaded 18_209_unknown.pdf  (2648 KB)
+2026-03-25 02:29:29,354  INFO        Downloaded 18_210_unknown.pdf  (1149 KB)
+2026-03-25 02:29:30,703  INFO        Downloaded 18_211_unknown.pdf  (882 KB)
+2026-03-25 02:29:32,062  INFO        Downloaded 18_212_unknown.pdf  (1973 KB)
+2026-03-25 02:29:33,044  INFO        Downloaded 18_213_unknown.pdf  (1055 KB)
+2026-03-25 02:29:34,396  INFO        Downloaded 18_214_unknown.pdf  (667 KB)
+2026-03-25 02:29:35,878  INFO        Downloaded 18_215_unknown.pdf  (2246 KB)
+2026-03-25 02:29:36,736  INFO        Downloaded 18_216_unknown.pdf  (804 KB)
+2026-03-25 02:29:38,094  INFO        Downloaded 18_217_unknown.pdf  (966 KB)
+2026-03-25 02:29:39,453  INFO        Downloaded 18_218_unknown.pdf  (2140 KB)
+2026-03-25 02:29:40,430  INFO        Downloaded 18_219_unknown.pdf  (910 KB)
+2026-03-25 02:29:41,787  INFO        Downloaded 18_220_unknown.pdf  (830 KB)
+2026-03-25 02:29:43,386  INFO        Downloaded 18_221_unknown.pdf  (3636 KB)
+2026-03-25 02:29:44,003  INFO        Downloaded 18_222_unknown.pdf  (923 KB)
+2026-03-25 02:29:45,352  INFO        Downloaded 18_223_unknown.pdf  (256 KB)
+2026-03-25 02:29:46,832  INFO        Downloaded 18_224_unknown.pdf  (693 KB)
+2026-03-25 02:29:48,069  INFO        Downloaded 18_225_unknown.pdf  (2522 KB)
+2026-03-25 02:29:49,052  INFO        Downloaded 18_226_unknown.pdf  (1337 KB)
+2026-03-25 02:29:50,291  INFO        Downloaded 18_227_unknown.pdf  (721 KB)
+2026-03-25 02:29:51,894  INFO        Downloaded 18_228_unknown.pdf  (2523 KB)
+2026-03-25 02:29:52,749  INFO        Downloaded 18_229_unknown.pdf  (829 KB)
+2026-03-25 02:29:54,234  INFO        Downloaded 18_230_unknown.pdf  (2516 KB)
+2026-03-25 02:29:55,340  INFO        Downloaded 18_231_unknown.pdf  (2894 KB)
+2026-03-25 02:29:56,447  INFO        Downloaded 18_232_unknown.pdf  (934 KB)
+2026-03-25 02:29:57,802  INFO        Downloaded 18_233_unknown.pdf  (1104 KB)
+2026-03-25 02:29:59,280  INFO        Downloaded 18_234_unknown.pdf  (2904 KB)
+2026-03-25 02:30:00,139  INFO        Downloaded 18_235_unknown.pdf  (935 KB)
+2026-03-25 02:30:01,498  INFO        Downloaded 18_236_unknown.pdf  (1023 KB)
+2026-03-25 02:30:03,011  INFO        Downloaded 18_237_unknown.pdf  (3997 KB)
+2026-03-25 02:30:03,830  INFO        Downloaded 18_238_unknown.pdf  (1021 KB)
+2026-03-25 02:30:05,189  INFO        Downloaded 18_239_unknown.pdf  (1246 KB)
+2026-03-25 02:30:06,547  INFO        Downloaded 18_240_unknown.pdf  (2278 KB)
+2026-03-25 02:30:07,529  INFO        Downloaded 18_241_unknown.pdf  (1221 KB)
+2026-03-25 02:30:08,885  INFO        Downloaded 18_242_unknown.pdf  (1295 KB)
+2026-03-25 02:30:10,247  INFO        Downloaded 18_243_unknown.pdf  (2789 KB)
+2026-03-25 02:30:11,230  INFO        Downloaded 18_244_unknown.pdf  (1793 KB)
+2026-03-25 02:30:12,458  INFO        Downloaded 18_245_unknown.pdf  (726 KB)
+2026-03-25 02:30:13,812  INFO        Downloaded 19_001_unknown.pdf  (556 KB)
+2026-03-25 02:30:15,167  INFO        Downloaded 19_002_unknown.pdf  (1198 KB)
+2026-03-25 02:30:16,152  INFO        Downloaded 19_003_unknown.pdf  (846 KB)
+2026-03-25 02:30:17,630  INFO        Downloaded 19_004_unknown.pdf  (1594 KB)
+2026-03-25 02:30:18,738  INFO        Downloaded 19_005_unknown.pdf  (1712 KB)
+2026-03-25 02:30:19,970  INFO        Downloaded 19_006_unknown.pdf  (810 KB)
+2026-03-25 02:30:21,333  INFO        Downloaded 19_007_unknown.pdf  (1437 KB)
+2026-03-25 02:30:22,320  INFO        Downloaded 19_008_unknown.pdf  (750 KB)
+2026-03-25 02:30:23,566  INFO        Downloaded 19_009_unknown.pdf  (381 KB)
+2026-03-25 02:30:25,167  INFO        Downloaded 19_010_unknown.pdf  (1091 KB)
+2026-03-25 02:30:27,152  INFO        Downloaded 19_011_unknown.pdf  (13955 KB)
+2026-03-25 02:30:27,291  INFO        Downloaded 19_012_unknown.pdf  (907 KB)
+2026-03-25 02:30:28,649  INFO        Downloaded 19_013_unknown.pdf  (1056 KB)
+2026-03-25 02:30:30,128  INFO        Downloaded 19_014_unknown.pdf  (1972 KB)
+2026-03-25 02:30:31,109  INFO        Downloaded 19_015_unknown.pdf  (910 KB)
+2026-03-25 02:30:32,467  INFO        Downloaded 19_016_unknown.pdf  (1133 KB)
+2026-03-25 02:30:33,821  INFO        Downloaded 19_017_unknown.pdf  (1677 KB)
+2026-03-25 02:30:34,805  INFO        Downloaded 19_018_unknown.pdf  (998 KB)
+2026-03-25 02:30:36,035  INFO        Downloaded 19_019_unknown.pdf  (306 KB)
+2026-03-25 02:30:37,641  INFO        Downloaded 19_020_unknown.pdf  (1683 KB)
+2026-03-25 02:30:38,497  INFO        Downloaded 19_021_unknown.pdf  (782 KB)
+2026-03-25 02:30:39,982  INFO        Downloaded 19_022_unknown.pdf  (2000 KB)
+2026-03-25 02:30:41,086  INFO        Downloaded 19_023_unknown.pdf  (2265 KB)
+2026-03-25 02:30:42,192  INFO        Downloaded 19_024_unknown.pdf  (994 KB)
+2026-03-25 02:30:43,547  INFO        Downloaded 19_025_unknown.pdf  (1111 KB)
+2026-03-25 02:30:44,906  INFO        Downloaded 19_026_unknown.pdf  (2128 KB)
+2026-03-25 02:30:45,885  INFO        Downloaded 19_027_unknown.pdf  (874 KB)
+2026-03-25 02:30:47,243  INFO        Downloaded 19_028_unknown.pdf  (1046 KB)
+2026-03-25 02:30:48,717  INFO        Downloaded 19_029_unknown.pdf  (2388 KB)
+2026-03-25 02:30:49,577  INFO        Downloaded 19_030_unknown.pdf  (729 KB)
+2026-03-25 02:30:50,939  INFO        Downloaded 19_031_unknown.pdf  (1089 KB)
+2026-03-25 02:30:52,285  INFO        Downloaded 19_032_unknown.pdf  (1305 KB)
+2026-03-25 02:30:53,398  INFO        Downloaded 19_033_unknown.pdf  (1393 KB)
+2026-03-25 02:30:54,629  INFO        Downloaded 19_034_unknown.pdf  (804 KB)
+2026-03-25 02:30:55,987  INFO        Downloaded 19_035_unknown.pdf  (1309 KB)
+2026-03-25 02:30:57,105  INFO        Downloaded 19_036_unknown.pdf  (2470 KB)
+2026-03-25 02:30:58,202  INFO        Downloaded 19_037_unknown.pdf  (1371 KB)
+2026-03-25 02:30:59,554  INFO        Downloaded 19_038_unknown.pdf  (1183 KB)
+2026-03-25 02:31:00,916  INFO        Downloaded 19_039_unknown.pdf  (2013 KB)
+2026-03-25 02:31:01,903  INFO        Downloaded 19_040_unknown.pdf  (1591 KB)
+2026-03-25 02:31:03,253  INFO        Downloaded 19_041_unknown.pdf  (1164 KB)
+2026-03-25 02:31:04,617  INFO        Downloaded 19_042_unknown.pdf  (2604 KB)
+2026-03-25 02:31:05,603  INFO        Downloaded 19_043_unknown.pdf  (1428 KB)
+2026-03-25 02:31:06,954  INFO        Downloaded 19_044_unknown.pdf  (1505 KB)
+2026-03-25 02:31:08,189  INFO        Downloaded 19_045_unknown.pdf  (1377 KB)
+2026-03-25 02:31:09,416  INFO        Downloaded 19_046_unknown.pdf  (1716 KB)
+2026-03-25 02:31:10,646  INFO        Downloaded 19_047_unknown.pdf  (1051 KB)
+2026-03-25 02:31:12,001  INFO        Downloaded 19_048_unknown.pdf  (1319 KB)
+2026-03-25 02:31:13,110  INFO        Downloaded 19_049_unknown.pdf  (1359 KB)
+2026-03-25 02:31:14,341  INFO        Downloaded 19_050_unknown.pdf  (870 KB)
+2026-03-25 02:31:15,698  INFO        Downloaded 19_051_unknown.pdf  (1188 KB)
+2026-03-25 02:31:16,812  INFO        Downloaded 19_052_unknown.pdf  (2053 KB)
+2026-03-25 02:31:18,039  INFO        Downloaded 19_053_unknown.pdf  (1305 KB)
+2026-03-25 02:31:19,270  INFO        Downloaded 19_054_unknown.pdf  (885 KB)
+2026-03-25 02:31:20,751  INFO        Downloaded 19_055_unknown.pdf  (2321 KB)
+2026-03-25 02:31:21,615  INFO        Downloaded 19_056_unknown.pdf  (1054 KB)
+2026-03-25 02:31:22,972  INFO        Downloaded 19_057_unknown.pdf  (979 KB)
+2026-03-25 02:31:24,338  INFO        Downloaded 19_058_unknown.pdf  (2234 KB)
+2026-03-25 02:31:25,315  INFO        Downloaded 19_059_unknown.pdf  (1194 KB)
+2026-03-25 02:31:26,669  INFO        Downloaded 19_060_unknown.pdf  (1207 KB)
+2026-03-25 02:31:28,152  INFO        Downloaded 19_061_unknown.pdf  (2675 KB)
+2026-03-25 02:31:29,009  INFO        Downloaded 19_062_unknown.pdf  (1076 KB)
+2026-03-25 02:31:30,365  INFO        Downloaded 19_063_unknown.pdf  (1143 KB)
+2026-03-25 02:31:31,598  INFO        Downloaded 19_064_unknown.pdf  (1179 KB)
+2026-03-25 02:31:32,951  INFO        Downloaded 19_065_unknown.pdf  (1321 KB)
+2026-03-25 02:31:33,937  INFO        Downloaded 19_066_unknown.pdf  (694 KB)
+2026-03-25 02:31:35,417  INFO        Downloaded 19_067_unknown.pdf  (1406 KB)
+2026-03-25 02:31:36,643  INFO        Downloaded 19_068_unknown.pdf  (2735 KB)
+2026-03-25 02:31:37,631  INFO        Downloaded 19_069_unknown.pdf  (1365 KB)
+2026-03-25 02:31:38,981  INFO        Downloaded 19_070_unknown.pdf  (854 KB)
+2026-03-25 02:31:40,460  INFO        Downloaded 19_071_unknown.pdf  (2258 KB)
+2026-03-25 02:31:41,323  INFO        Downloaded 19_072_unknown.pdf  (945 KB)
+2026-03-25 02:31:42,678  INFO        Downloaded 19_073_unknown.pdf  (707 KB)
+2026-03-25 02:31:44,158  INFO        Downloaded 19_074_unknown.pdf  (1879 KB)
+2026-03-25 02:31:45,023  INFO        Downloaded 19_075_unknown.pdf  (1095 KB)
+2026-03-25 02:31:46,377  INFO        Downloaded 19_076_unknown.pdf  (1022 KB)
+2026-03-25 02:31:47,732  INFO        Downloaded 19_077_unknown.pdf  (1826 KB)
+2026-03-25 02:31:48,717  INFO        Downloaded 19_078_unknown.pdf  (1117 KB)
+2026-03-25 02:31:50,072  INFO        Downloaded 19_079_unknown.pdf  (946 KB)
+2026-03-25 02:31:51,433  INFO        Downloaded 19_080_unknown.pdf  (1928 KB)
+2026-03-25 02:31:52,415  INFO        Downloaded 19_081_unknown.pdf  (972 KB)
+2026-03-25 02:31:53,766  INFO        Downloaded 19_082_unknown.pdf  (1001 KB)
+2026-03-25 02:31:55,244  INFO        Downloaded 19_083_unknown.pdf  (2632 KB)
+2026-03-25 02:31:55,982  INFO        Downloaded 19_084_unknown.pdf  (637 KB)
+2026-03-25 02:31:57,468  INFO        Downloaded 19_085_unknown.pdf  (952 KB)
+2026-03-25 02:31:58,945  INFO        Downloaded 19_086_unknown.pdf  (2207 KB)
+2026-03-25 02:31:59,807  INFO        Downloaded 19_087_unknown.pdf  (1094 KB)
+2026-03-25 02:32:01,286  INFO        Downloaded 19_088_unknown.pdf  (1319 KB)
+2026-03-25 02:32:02,401  INFO        Downloaded 19_089_unknown.pdf  (2356 KB)
+2026-03-25 02:32:03,506  INFO        Downloaded 19_090_unknown.pdf  (898 KB)
+2026-03-25 02:32:04,862  INFO        Downloaded 19_091_unknown.pdf  (1043 KB)
+2026-03-25 02:32:06,337  INFO        Downloaded 19_092_unknown.pdf  (2326 KB)
+2026-03-25 02:32:07,201  INFO        Downloaded 19_093_unknown.pdf  (1128 KB)
+2026-03-25 02:32:08,557  INFO        Downloaded 19_094_unknown.pdf  (1200 KB)
+2026-03-25 02:32:09,919  INFO        Downloaded 19_095_unknown.pdf  (2305 KB)
+2026-03-25 02:32:10,897  INFO        Downloaded 19_096_unknown.pdf  (878 KB)
+2026-03-25 02:32:12,252  INFO        Downloaded 19_097_unknown.pdf  (995 KB)
+2026-03-25 02:32:13,731  INFO        Downloaded 19_098_unknown.pdf  (2633 KB)
+2026-03-25 02:32:14,590  INFO        Downloaded 19_099_unknown.pdf  (905 KB)
+2026-03-25 02:32:15,948  INFO        Downloaded 19_100_unknown.pdf  (1367 KB)
+2026-03-25 02:32:17,311  INFO        Downloaded 19_101_unknown.pdf  (2840 KB)
+2026-03-25 02:32:18,289  INFO        Downloaded 19_102_unknown.pdf  (1506 KB)
+2026-03-25 02:32:19,642  INFO        Downloaded 19_103_unknown.pdf  (1129 KB)
+2026-03-25 02:32:21,119  INFO        Downloaded 19_104_unknown.pdf  (2699 KB)
+2026-03-25 02:32:21,987  INFO        Downloaded 19_105_unknown.pdf  (1576 KB)
+2026-03-25 02:32:23,345  INFO        Downloaded 19_106_unknown.pdf  (1374 KB)
+2026-03-25 02:32:24,707  INFO        Downloaded 19_107_unknown.pdf  (3070 KB)
+2026-03-25 02:32:25,686  INFO        Downloaded 19_108_unknown.pdf  (1423 KB)
+2026-03-25 02:32:26,915  INFO        Downloaded 19_109_unknown.pdf  (428 KB)
+2026-03-25 02:32:28,393  INFO        Downloaded 19_110_unknown.pdf  (852 KB)
+2026-03-25 02:32:29,500  INFO        Downloaded 19_111_unknown.pdf  (954 KB)
+2026-03-25 02:32:30,734  INFO        Downloaded 19_112_unknown.pdf  (983 KB)
+2026-03-25 02:32:31,964  INFO        Downloaded 19_113_unknown.pdf  (640 KB)
+2026-03-25 02:32:33,321  INFO        Downloaded 19_114_unknown.pdf  (1236 KB)
+2026-03-25 02:32:34,437  INFO        Downloaded 19_115_unknown.pdf  (2269 KB)
+2026-03-25 02:32:35,534  INFO        Downloaded 19_116_unknown.pdf  (939 KB)
+2026-03-25 02:32:36,889  INFO        Downloaded 19_117_unknown.pdf  (779 KB)
+2026-03-25 02:32:38,368  INFO        Downloaded 19_118_unknown.pdf  (2220 KB)
+2026-03-25 02:32:39,229  INFO        Downloaded 19_119_unknown.pdf  (1018 KB)
+2026-03-25 02:32:40,582  INFO        Downloaded 19_120_unknown.pdf  (761 KB)
+2026-03-25 02:32:42,059  INFO        Downloaded 19_121_unknown.pdf  (1923 KB)
+2026-03-25 02:32:42,921  INFO        Downloaded 19_122_unknown.pdf  (959 KB)
+2026-03-25 02:32:44,279  INFO        Downloaded 19_123_unknown.pdf  (771 KB)
+2026-03-25 02:32:46,005  INFO        Downloaded 19_124_unknown.pdf  (5537 KB)
+2026-03-25 02:32:46,497  INFO        Downloaded 19_125_unknown.pdf  (1172 KB)
+2026-03-25 02:32:47,967  INFO        Downloaded 19_126_unknown.pdf  (966 KB)
+2026-03-25 02:32:49,328  INFO        Downloaded 19_127_unknown.pdf  (2164 KB)
+2026-03-25 02:32:50,310  INFO        Downloaded 19_128_unknown.pdf  (1124 KB)
+2026-03-25 02:32:51,665  INFO        Downloaded 19_129_unknown.pdf  (1030 KB)
+2026-03-25 02:32:53,017  INFO        Downloaded 19_130_unknown.pdf  (1036 KB)
+2026-03-25 02:32:54,124  INFO        Downloaded 19_131_unknown.pdf  (1025 KB)
+2026-03-25 02:32:55,355  INFO        Downloaded 19_132_unknown.pdf  (579 KB)
+2026-03-25 02:32:56,591  INFO        Downloaded 19_133_unknown.pdf  (1101 KB)
+2026-03-25 02:32:58,070  INFO        Downloaded 19_134_unknown.pdf  (2777 KB)
+2026-03-25 02:32:58,929  INFO        Downloaded 19_135_unknown.pdf  (1011 KB)
+2026-03-25 02:33:00,283  INFO        Downloaded 19_136_unknown.pdf  (1040 KB)
+2026-03-25 02:33:01,641  INFO        Downloaded 19_137_unknown.pdf  (1680 KB)
+2026-03-25 02:33:02,623  INFO        Downloaded 19_138_unknown.pdf  (871 KB)
+2026-03-25 02:33:03,981  INFO        Downloaded 19_139_unknown.pdf  (1151 KB)
+2026-03-25 02:33:05,334  INFO        Downloaded 19_140_unknown.pdf  (1694 KB)
+2026-03-25 02:33:06,318  INFO        Downloaded 19_141_unknown.pdf  (1017 KB)
+2026-03-25 02:33:07,694  INFO        Downloaded 19_142_unknown.pdf  (1254 KB)
+2026-03-25 02:33:08,908  INFO        Downloaded 19_143_unknown.pdf  (1214 KB)
+2026-03-25 02:33:10,259  INFO        Downloaded 19_144_unknown.pdf  (796 KB)
+2026-03-25 02:33:11,374  INFO        Downloaded 19_145_unknown.pdf  (1009 KB)
+2026-03-25 02:33:13,102  INFO        Downloaded 19_146_unknown.pdf  (3821 KB)
+2026-03-25 02:33:13,710  INFO        Downloaded 19_147_unknown.pdf  (739 KB)
+2026-03-25 02:33:15,193  INFO        Downloaded 19_148_unknown.pdf  (1212 KB)
+2026-03-25 02:33:16,801  INFO        Downloaded 19_149_unknown.pdf  (4348 KB)
+2026-03-25 02:33:17,410  INFO        Downloaded 19_150_unknown.pdf  (998 KB)
+2026-03-25 02:33:18,889  INFO        Downloaded 19_151_unknown.pdf  (1022 KB)
+2026-03-25 02:33:20,000  INFO        Downloaded 19_152_unknown.pdf  (964 KB)
+2026-03-25 02:33:21,481  INFO        Downloaded 19_153_unknown.pdf  (2551 KB)
+2026-03-25 02:33:22,464  INFO        Downloaded 19_154_unknown.pdf  (872 KB)
+2026-03-25 02:33:23,700  INFO        Downloaded 19_155_unknown.pdf  (992 KB)
+2026-03-25 02:33:24,938  INFO        Downloaded 19_156_unknown.pdf  (1183 KB)
+2026-03-25 02:33:26,170  INFO        Downloaded 19_157_unknown.pdf  (1085 KB)
+2026-03-25 02:33:27,525  INFO        Downloaded 19_158_unknown.pdf  (1491 KB)
+2026-03-25 02:33:28,634  INFO        Downloaded 19_159_unknown.pdf  (1053 KB)
+2026-03-25 02:33:29,992  INFO        Downloaded 19_160_unknown.pdf  (1843 KB)
+2026-03-25 02:33:31,098  INFO        Downloaded 19_161_unknown.pdf  (1028 KB)
+2026-03-25 02:33:32,453  INFO        Downloaded 19_162_unknown.pdf  (1402 KB)
+2026-03-25 02:33:33,564  INFO        Downloaded 19_163_unknown.pdf  (1339 KB)
+2026-03-25 02:33:34,794  INFO        Downloaded 19_164_unknown.pdf  (1099 KB)
+2026-03-25 02:33:36,525  INFO        Downloaded 19_165_unknown.pdf  (4873 KB)
+2026-03-25 02:33:37,258  INFO        Downloaded 19_166_unknown.pdf  (1831 KB)
+2026-03-25 02:33:38,490  INFO        Downloaded 19_167_unknown.pdf  (1118 KB)
+2026-03-25 02:33:39,595  INFO        Downloaded 19_168_unknown.pdf  (296 KB)
+2026-03-25 02:33:41,208  INFO        Downloaded 19_169_unknown.pdf  (1564 KB)
+2026-03-25 02:33:42,312  INFO        Downloaded 19_170_unknown.pdf  (1967 KB)
+2026-03-25 02:33:43,421  INFO        Downloaded 19_171_unknown.pdf  (1125 KB)
+2026-03-25 02:33:44,653  INFO        Downloaded 19_172_unknown.pdf  (1113 KB)
+2026-03-25 02:33:46,260  INFO        Downloaded 19_173_unknown.pdf  (4831 KB)
+2026-03-25 02:33:46,993  INFO        Downloaded 19_174_unknown.pdf  (1046 KB)
+2026-03-25 02:33:48,472  INFO        Downloaded 19_175_unknown.pdf  (1222 KB)
+2026-03-25 02:33:49,583  INFO        Downloaded 19_176_unknown.pdf  (1708 KB)
+2026-03-25 02:33:50,814  INFO        Downloaded 19_177_unknown.pdf  (1612 KB)
+2026-03-25 02:33:51,923  INFO        Downloaded 19_178_unknown.pdf  (874 KB)
+2026-03-25 02:33:53,280  INFO        Downloaded 19_179_unknown.pdf  (925 KB)
+2026-03-25 02:33:54,511  INFO        Downloaded 19_180_unknown.pdf  (1227 KB)
+2026-03-25 02:33:55,620  INFO        Downloaded 19_181_unknown.pdf  (734 KB)
+2026-03-25 02:33:57,109  INFO        Downloaded 19_182_unknown.pdf  (1350 KB)
+2026-03-25 02:33:58,219  INFO        Downloaded 19_183_unknown.pdf  (1575 KB)
+2026-03-25 02:33:59,325  INFO        Downloaded 19_184_unknown.pdf  (1028 KB)
+2026-03-25 02:34:00,682  INFO        Downloaded 19_185_unknown.pdf  (1083 KB)
+2026-03-25 02:34:01,916  INFO        Downloaded 19_186_unknown.pdf  (1624 KB)
+2026-03-25 02:34:03,024  INFO        Downloaded 19_187_unknown.pdf  (1038 KB)
+2026-03-25 02:34:04,500  INFO        Downloaded 19_188_unknown.pdf  (998 KB)
+2026-03-25 02:34:05,615  INFO        Downloaded 19_189_unknown.pdf  (1583 KB)
+2026-03-25 02:34:06,720  INFO        Downloaded 19_190_unknown.pdf  (852 KB)
+2026-03-25 02:34:08,200  INFO        Downloaded 19_191_unknown.pdf  (1511 KB)
+2026-03-25 02:34:09,308  INFO        Downloaded 19_192_unknown.pdf  (1542 KB)
+2026-03-25 02:34:10,417  INFO        Downloaded 19_193_unknown.pdf  (887 KB)
+2026-03-25 02:34:11,896  INFO        Downloaded 19_194_unknown.pdf  (1115 KB)
+2026-03-25 02:34:13,006  INFO        Downloaded 19_195_unknown.pdf  (1439 KB)
+2026-03-25 02:34:14,114  INFO        Downloaded 19_196_unknown.pdf  (842 KB)
+2026-03-25 02:34:15,592  INFO        Downloaded 19_197_unknown.pdf  (1052 KB)
+2026-03-25 02:34:16,700  INFO        Downloaded 19_198_unknown.pdf  (1017 KB)
+2026-03-25 02:34:17,932  INFO        Downloaded 19_199_unknown.pdf  (1031 KB)
+2026-03-25 02:34:19,040  INFO        Downloaded 19_200_unknown.pdf  (552 KB)
+2026-03-25 02:34:20,527  INFO        Downloaded 19_201_unknown.pdf  (1495 KB)
+2026-03-25 02:34:21,632  INFO        Downloaded 19_202_unknown.pdf  (1478 KB)
+2026-03-25 02:34:22,862  INFO        Downloaded 19_203_unknown.pdf  (1255 KB)
+2026-03-25 02:34:24,096  INFO        Downloaded 19_204_unknown.pdf  (1415 KB)
+2026-03-25 02:34:25,324  INFO        Downloaded 19_205_unknown.pdf  (1186 KB)
+2026-03-25 02:34:26,562  INFO        Downloaded 19_206_unknown.pdf  (1604 KB)
+2026-03-25 02:34:27,667  INFO        Downloaded 19_207_unknown.pdf  (972 KB)
+2026-03-25 02:34:29,144  INFO        Downloaded 19_208_unknown.pdf  (1095 KB)
+2026-03-25 02:34:30,255  INFO        Downloaded 19_209_unknown.pdf  (1436 KB)
+2026-03-25 02:34:31,364  INFO        Downloaded 19_210_unknown.pdf  (933 KB)
+2026-03-25 02:34:32,840  INFO        Downloaded 19_211_unknown.pdf  (1166 KB)
+2026-03-25 02:34:33,949  INFO        Downloaded 19_212_unknown.pdf  (1238 KB)
+2026-03-25 02:34:35,060  INFO        Downloaded 19_213_unknown.pdf  (848 KB)
+2026-03-25 02:34:36,540  INFO        Downloaded 19_214_unknown.pdf  (1291 KB)
+2026-03-25 02:34:37,649  INFO        Downloaded 19_215_unknown.pdf  (1689 KB)
+2026-03-25 02:34:38,753  INFO        Downloaded 19_216_unknown.pdf  (1081 KB)
+2026-03-25 02:34:40,113  INFO        Downloaded 19_217_unknown.pdf  (1133 KB)
+2026-03-25 02:34:41,462  INFO        Downloaded 19_218_unknown.pdf  (2277 KB)
+2026-03-25 02:34:42,448  INFO        Downloaded 19_219_unknown.pdf  (1078 KB)
+2026-03-25 02:34:43,804  INFO        Downloaded 19_220_unknown.pdf  (1020 KB)
+2026-03-25 02:34:45,039  INFO        Downloaded 19_221_unknown.pdf  (1640 KB)
+2026-03-25 02:34:46,148  INFO        Downloaded 19_222_unknown.pdf  (940 KB)
+2026-03-25 02:34:47,632  INFO        Downloaded 19_223_unknown.pdf  (1960 KB)
+2026-03-25 02:34:48,739  INFO        Downloaded 19_224_unknown.pdf  (2020 KB)
+2026-03-25 02:34:49,845  INFO        Downloaded 19_225_unknown.pdf  (1006 KB)
+2026-03-25 02:34:51,325  INFO        Downloaded 19_226_unknown.pdf  (1333 KB)
+2026-03-25 02:34:52,557  INFO        Downloaded 19_227_unknown.pdf  (3015 KB)
+2026-03-25 02:34:53,538  INFO        Downloaded 19_228_unknown.pdf  (945 KB)
+2026-03-25 02:34:55,020  INFO        Downloaded 19_229_unknown.pdf  (1729 KB)
+2026-03-25 02:34:56,130  INFO        Downloaded 19_230_unknown.pdf  (2243 KB)
+2026-03-25 02:34:57,238  INFO        Downloaded 19_231_unknown.pdf  (1201 KB)
+2026-03-25 02:34:58,596  INFO        Downloaded 19_232_unknown.pdf  (1362 KB)
+2026-03-25 02:34:59,946  INFO        Downloaded 19_233_unknown.pdf  (2663 KB)
+2026-03-25 02:35:01,053  INFO        Downloaded 19_234_unknown.pdf  (1372 KB)
+2026-03-25 02:35:02,288  INFO        Downloaded 19_235_unknown.pdf  (1440 KB)
+2026-03-25 02:35:03,641  INFO        Downloaded 19_236_unknown.pdf  (3003 KB)
+2026-03-25 02:35:04,630  INFO        Downloaded 19_237_unknown.pdf  (1024 KB)
+2026-03-25 02:35:06,108  INFO        Downloaded 19_238_unknown.pdf  (1498 KB)
+2026-03-25 02:35:07,093  INFO        Downloaded 19_239_unknown.pdf  (959 KB)
+2026-03-25 02:35:08,322  INFO        Downloaded 20_001_2022-02-01.pdf  (373 KB)
+2026-03-25 02:35:09,926  INFO        Downloaded 20_002_2022-02-01.pdf  (793 KB)
+2026-03-25 02:35:10,909  INFO        Downloaded 20_003_2022-02-08.pdf  (794 KB)
+2026-03-25 02:35:12,016  INFO        Downloaded 20_004_2022-02-08.pdf  (282 KB)
+2026-03-25 02:35:13,372  INFO        Downloaded 20_005_2022-02-08.pdf  (208 KB)
+2026-03-25 02:35:14,729  INFO        Downloaded 20_006_2022-02-21.pdf  (647 KB)
+2026-03-25 02:35:15,960  INFO        Downloaded 20_007_2022-02-09.pdf  (1366 KB)
+2026-03-25 02:35:16,946  INFO        Downloaded 20_008_2022-02-08.pdf  (543 KB)
+2026-03-25 02:35:18,427  INFO        Downloaded 20_009_2022-02-08.pdf  (835 KB)
+2026-03-25 02:35:19,665  INFO        Downloaded 20_010_2022-01-13.pdf  (2642 KB)
+2026-03-25 02:35:20,777  INFO        Downloaded 20_011_2022-01-14.pdf  (3118 KB)
+2026-03-25 02:35:22,125  INFO        Downloaded 20_012_2022-01-20.pdf  (3797 KB)
+2026-03-25 02:35:23,115  INFO        Downloaded 20_013_2022-01-27.pdf  (985 KB)
+2026-03-25 02:35:24,471  INFO        Downloaded 20_014_2022-01-28.pdf  (864 KB)
+2026-03-25 02:35:25,583  INFO        Downloaded 20_015_2022-01-31.pdf  (665 KB)
+2026-03-25 02:35:26,939  INFO        Downloaded 20_016_2022-02-17.pdf  (746 KB)
+2026-03-25 02:35:28,294  INFO        Downloaded 20_017_2022-02-18.pdf  (1579 KB)
+2026-03-25 02:35:29,528  INFO        Downloaded 20_018_2022-02-21.pdf  (3123 KB)
+2026-03-25 02:35:30,387  INFO        Downloaded 20_019_2022-03-21.pdf  (438 KB)
+2026-03-25 02:35:31,989  INFO        Downloaded 20_020_2022-03-17.pdf  (1085 KB)
+2026-03-25 02:35:33,102  INFO        Downloaded 20_021_2022-06-20.pdf  (1746 KB)
+2026-03-25 02:35:34,209  INFO        Downloaded 20_022_2022-03-21.pdf  (1077 KB)
+2026-03-25 02:35:35,560  INFO        Downloaded 20_023_2022-03-23.pdf  (839 KB)
+2026-03-25 02:35:36,791  INFO        Downloaded 20_024_2022-03-24.pdf  (969 KB)
+2026-03-25 02:35:38,284  INFO        Downloaded 20_025_2022-03-25.pdf  (4923 KB)
+2026-03-25 02:35:39,131  INFO        Downloaded 20_026_2022-03-29.pdf  (698 KB)
+2026-03-25 02:35:40,491  INFO        Downloaded 20_027_2022-04-07.pdf  (930 KB)
+2026-03-25 02:35:41,728  INFO        Downloaded 20_028_2022-06-15.pdf  (1862 KB)
+2026-03-25 02:35:42,829  INFO        Downloaded 20_029_2022-04-11.pdf  (637 KB)
+2026-03-25 02:35:44,187  INFO        Downloaded 20_030_2022-04-28.pdf  (1015 KB)
+2026-03-25 02:35:45,422  INFO        Downloaded 20_031_2022-06-15.pdf  (1516 KB)
+2026-03-25 02:35:46,527  INFO        Downloaded 20_032_2022-05-02.pdf  (707 KB)
+2026-03-25 02:35:47,900  INFO        Downloaded 20_033_2022-05-12.pdf  (1024 KB)
+2026-03-25 02:35:49,124  INFO        Downloaded 20_034_2022-06-15.pdf  (1922 KB)
+2026-03-25 02:35:50,225  INFO        Downloaded 20_035_2022-05-16.pdf  (816 KB)
+2026-03-25 02:35:51,953  INFO        Downloaded 20_036_2022-05-19.pdf  (4445 KB)
+2026-03-25 02:35:52,697  INFO        Downloaded 20_037_2022-06-14.pdf  (1963 KB)
+2026-03-25 02:35:54,219  INFO        Downloaded 20_038_2022-05-23.pdf  (3676 KB)
+2026-03-25 02:35:55,160  INFO        Downloaded 20_039_2022-06-01.pdf  (1028 KB)
+2026-03-25 02:35:56,518  INFO        Downloaded 20_040_2022-06-03.pdf  (1044 KB)
+2026-03-25 02:35:57,749  INFO        Downloaded 20_041_2022-06-03.pdf  (1284 KB)
+2026-03-25 02:35:58,978  INFO        Downloaded 20_042_2022-06-07.pdf  (1470 KB)
+2026-03-25 02:36:00,461  INFO        Downloaded 20_043_2022-06-23.pdf  (5403 KB)
+2026-03-25 02:36:01,440  INFO        Downloaded 20_044_2022-06-28.pdf  (1905 KB)
+2026-03-25 02:36:02,553  INFO        Downloaded 20_045_2022-06-28.pdf  (1003 KB)
+2026-03-25 02:36:03,911  INFO        Downloaded 20_046_2022-07-07.pdf  (1075 KB)
+2026-03-25 02:36:05,264  INFO        Downloaded 20_047_2022-07-12.pdf  (2265 KB)
+2026-03-25 02:36:06,248  INFO        Downloaded 20_048_2022-07-11.pdf  (1008 KB)
+2026-03-25 02:36:07,607  INFO        Downloaded 20_049_2022-09-07.pdf  (1006 KB)
+2026-03-25 02:36:08,837  INFO        Downloaded 20_050_2022-09-08.pdf  (1019 KB)
+2026-03-25 02:36:10,073  INFO        Downloaded 20_051_2022-09-14.pdf  (1695 KB)
+2026-03-25 02:36:11,174  INFO        Downloaded 20_052_2022-09-12.pdf  (553 KB)
+2026-03-25 02:36:12,657  INFO        Downloaded 20_053_2022-09-22.pdf  (1105 KB)
+2026-03-25 02:36:13,773  INFO        Downloaded 20_054_2022-09-27.pdf  (2020 KB)
+2026-03-25 02:36:14,873  INFO        Downloaded 20_055_2022-09-26.pdf  (1005 KB)
+2026-03-25 02:36:16,236  INFO        Downloaded 20_056_2022-09-29.pdf  (1044 KB)
+2026-03-25 02:36:17,473  INFO        Downloaded 20_057_2022-10-05.pdf  (1758 KB)
+2026-03-25 02:36:18,576  INFO        Downloaded 20_058_2022-10-04.pdf  (867 KB)
+2026-03-25 02:36:19,933  INFO        Downloaded 20_059_2022-10-13.pdf  (1024 KB)
+2026-03-25 02:36:21,170  INFO        Downloaded 20_060_2022-10-18.pdf  (1777 KB)
+2026-03-25 02:36:22,274  INFO        Downloaded 20_061_2022-10-17.pdf  (866 KB)
+2026-03-25 02:36:23,635  INFO        Downloaded 20_062_2022-10-20.pdf  (1058 KB)
+2026-03-25 02:36:24,869  INFO        Downloaded 20_063_2022-10-25.pdf  (1852 KB)
+2026-03-25 02:36:25,973  INFO        Downloaded 20_064_2022-10-24.pdf  (995 KB)
+2026-03-25 02:36:27,329  INFO        Downloaded 20_065_2022-11-10.pdf  (1098 KB)
+2026-03-25 02:36:28,684  INFO        Downloaded 20_066_2022-11-15.pdf  (2456 KB)
+2026-03-25 02:36:29,671  INFO        Downloaded 20_067_2022-11-14.pdf  (1033 KB)
+2026-03-25 02:36:31,027  INFO        Downloaded 20_068_2022-11-23.pdf  (1086 KB)
+2026-03-25 02:36:32,257  INFO        Downloaded 20_069_2022-11-24.pdf  (1059 KB)
+2026-03-25 02:36:33,497  INFO        Downloaded 20_070_2022-11-25.pdf  (1501 KB)
+2026-03-25 02:36:34,600  INFO        Downloaded 20_071_2022-11-28.pdf  (700 KB)
+2026-03-25 02:36:36,079  INFO        Downloaded 20_072_2022-12-01.pdf  (1023 KB)
+2026-03-25 02:36:37,312  INFO        Downloaded 20_073_2022-12-06.pdf  (2253 KB)
+2026-03-25 02:36:38,300  INFO        Downloaded 20_074_2022-12-05.pdf  (1157 KB)
+2026-03-25 02:36:39,654  INFO        Downloaded 20_075_2022-12-15.pdf  (1199 KB)
+2026-03-25 02:36:41,137  INFO        Downloaded 20_076_2022-12-20.pdf  (4665 KB)
+2026-03-25 02:36:41,993  INFO        Downloaded 20_077_2022-12-19.pdf  (800 KB)
+2026-03-25 02:36:43,476  INFO        Downloaded 20_078_2023-01-31.pdf  (1970 KB)
+2026-03-25 02:36:44,462  INFO        Downloaded 20_079_2023-01-20.pdf  (1395 KB)
+2026-03-25 02:36:45,815  INFO        Downloaded 20_080_2023-01-23.pdf  (910 KB)
+2026-03-25 02:36:47,044  INFO        Downloaded 20_081_2023-01-26.pdf  (919 KB)
+2026-03-25 02:36:48,281  INFO        Downloaded 20_082_2023-01-27.pdf  (1390 KB)
+2026-03-25 02:36:49,384  INFO        Downloaded 20_083_2023-01-30.pdf  (579 KB)
+2026-03-25 02:36:50,864  INFO        Downloaded 20_084_2023-02-09.pdf  (1121 KB)
+2026-03-25 02:36:51,974  INFO        Downloaded 20_085_2023-02-14.pdf  (1594 KB)
+2026-03-25 02:36:53,080  INFO        Downloaded 20_086_2023-02-13.pdf  (879 KB)
+2026-03-25 02:36:54,438  INFO        Downloaded 20_087_2023-03-02.pdf  (982 KB)
+2026-03-25 02:36:55,801  INFO        Downloaded 20_088_2023-03-07.pdf  (1602 KB)
+2026-03-25 02:36:56,784  INFO        Downloaded 20_089_2023-03-06.pdf  (888 KB)
+2026-03-25 02:36:58,395  INFO        Downloaded 20_090_2023-03-16.pdf  (3009 KB)
+2026-03-25 02:36:59,253  INFO        Downloaded 20_091_2023-03-21.pdf  (1789 KB)
+2026-03-25 02:37:00,604  INFO        Downloaded 20_092_2023-03-21.pdf  (1046 KB)
+2026-03-25 02:37:01,715  INFO        Downloaded 20_093_2023-03-30.pdf  (969 KB)
+2026-03-25 02:37:03,194  INFO        Downloaded 20_094_2023-03-31.pdf  (1450 KB)
+2026-03-25 02:37:04,179  INFO        Downloaded 20_095_2023-04-03.pdf  (991 KB)
+2026-03-25 02:37:05,537  INFO        Downloaded 20_096_2023-04-25.pdf  (1092 KB)
+2026-03-25 02:37:06,772  INFO        Downloaded 20_097_2023-04-25.pdf  (1777 KB)
+2026-03-25 02:37:07,873  INFO        Downloaded 20_098_2023-04-24.pdf  (746 KB)
+2026-03-25 02:37:09,356  INFO        Downloaded 20_099_2023-04-27.pdf  (1301 KB)
+2026-03-25 02:37:10,467  INFO        Downloaded 20_100_2023-04-28.pdf  (1475 KB)
+2026-03-25 02:37:11,576  INFO        Downloaded 20_101_2023-05-02.pdf  (889 KB)
+2026-03-25 02:37:12,932  INFO        Downloaded 20_102_2023-05-11.pdf  (1111 KB)
+2026-03-25 02:37:14,164  INFO        Downloaded 20_103_2023-05-16.pdf  (1677 KB)
+2026-03-25 02:37:15,272  INFO        Downloaded 20_104_2023-05-15.pdf  (955 KB)
+2026-03-25 02:37:16,629  INFO        Downloaded 20_105_2023-05-25.pdf  (1163 KB)
+2026-03-25 02:37:17,861  INFO        Downloaded 20_106_2023-05-31.pdf  (1610 KB)
+2026-03-25 02:37:18,967  INFO        Downloaded 20_107_2023-05-30.pdf  (1008 KB)
+2026-03-25 02:37:20,326  INFO        Downloaded 20_108_2023-06-15.pdf  (1198 KB)
+2026-03-25 02:37:21,562  INFO        Downloaded 20_109_2023-06-20.pdf  (2045 KB)
+2026-03-25 02:37:22,664  INFO        Downloaded 20_110_2023-06-19.pdf  (767 KB)
+2026-03-25 02:37:24,142  INFO        Downloaded 20_111_2023-06-22.pdf  (1241 KB)
+2026-03-25 02:37:25,255  INFO        Downloaded 20_112_2023-06-27.pdf  (1644 KB)
+2026-03-25 02:37:26,613  INFO        Downloaded 20_113_2023-06-26.pdf  (4078 KB)
+2026-03-25 02:37:27,591  INFO        Downloaded 20_114_2023-07-06.pdf  (975 KB)
+2026-03-25 02:37:29,075  INFO        Downloaded 20_115_2023-07-11.pdf  (1958 KB)
+2026-03-25 02:37:30,057  INFO        Downloaded 20_116_2023-07-10.pdf  (965 KB)
+2026-03-25 02:37:31,416  INFO        Downloaded 20_117_2023-09-06.pdf  (1129 KB)
+2026-03-25 02:37:32,643  INFO        Downloaded 20_118_2023-09-07.pdf  (1046 KB)
+2026-03-25 02:37:33,877  INFO        Downloaded 20_119_2023-09-08.pdf  (1433 KB)
+2026-03-25 02:37:34,986  INFO        Downloaded 20_120_2023-09-13.pdf  (950 KB)
+2026-03-25 02:37:36,345  INFO        Downloaded 20_121_2023-09-21.pdf  (1153 KB)
+2026-03-25 02:37:37,694  INFO        Downloaded 20_122_2023-09-26.pdf  (2403 KB)
+2026-03-25 02:37:38,680  INFO        Downloaded 20_123_2023-09-26.pdf  (980 KB)
+2026-03-25 02:37:40,040  INFO        Downloaded 20_124_2023-09-28.pdf  (1089 KB)
+2026-03-25 02:37:41,275  INFO        Downloaded 20_125_2023-10-09.pdf  (1778 KB)
+2026-03-25 02:37:42,377  INFO        Downloaded 20_126_2023-10-02.pdf  (671 KB)
+2026-03-25 02:37:44,115  INFO        Downloaded 20_127_2023-10-12.pdf  (4547 KB)
+2026-03-25 02:37:44,850  INFO        Downloaded 20_128_2023-10-17.pdf  (2128 KB)
+2026-03-25 02:37:46,213  INFO        Downloaded 20_129_2023-10-16.pdf  (2393 KB)
+2026-03-25 02:37:47,314  INFO        Downloaded 20_130_2023-10-19.pdf  (1187 KB)
+2026-03-25 02:37:48,795  INFO        Downloaded 20_131_2023-10-31.pdf  (2073 KB)
+2026-03-25 02:37:49,778  INFO        Downloaded 20_132_2023-10-23.pdf  (909 KB)
+2026-03-25 02:37:51,136  INFO        Downloaded 20_133_2023-11-09.pdf  (1088 KB)
+2026-03-25 02:37:52,372  INFO        Downloaded 20_134_2023-11-14.pdf  (1997 KB)
+2026-03-25 02:37:53,474  INFO        Downloaded 20_135_2023-11-13.pdf  (972 KB)
+2026-03-25 02:37:54,830  INFO        Downloaded 20_136_2023-11-16.pdf  (1054 KB)
+2026-03-25 02:37:56,069  INFO        Downloaded 20_137_2023-11-23.pdf  (2098 KB)
+2026-03-25 02:37:57,172  INFO        Downloaded 20_138_2023-11-20.pdf  (1302 KB)
+2026-03-25 02:37:58,400  INFO        Downloaded 20_139_2023-11-29.pdf  (422 KB)
+2026-03-25 02:37:59,883  INFO        Downloaded 20_140_2023-11-30.pdf  (946 KB)
+2026-03-25 02:38:01,111  INFO        Downloaded 20_141_2023-12-05.pdf  (1831 KB)
+2026-03-25 02:38:02,097  INFO        Downloaded 20_142_2023-12-04.pdf  (907 KB)
+2026-03-25 02:38:03,574  INFO        Downloaded 20_143_2024-01-12.pdf  (1281 KB)
+2026-03-25 02:38:04,685  INFO        Downloaded 20_144_2024-01-12.pdf  (1628 KB)
+2026-03-25 02:38:05,791  INFO        Downloaded 20_145_2024-01-12.pdf  (941 KB)
+2026-03-25 02:38:07,150  INFO        Downloaded 20_146_2024-01-18.pdf  (1283 KB)
+2026-03-25 02:38:08,632  INFO        Downloaded 20_147_2024-01-23.pdf  (4551 KB)
+2026-03-25 02:38:09,488  INFO        Downloaded 20_148_2024-01-22.pdf  (819 KB)
+2026-03-25 02:38:10,849  INFO        Downloaded 20_149_2024-01-31.pdf  (1320 KB)
+2026-03-25 02:38:12,074  INFO        Downloaded 20_150_2024-02-01.pdf  (1143 KB)
+2026-03-25 02:38:13,312  INFO        Downloaded 20_151_2024-02-02.pdf  (1443 KB)
+2026-03-25 02:38:14,417  INFO        Downloaded 20_152_2024-02-06.pdf  (783 KB)
+2026-03-25 02:38:15,813  INFO        Downloaded 20_153_2024-02-22.pdf  (1092 KB)
+2026-03-25 02:38:17,130  INFO        Downloaded 20_154_2024-03-05.pdf  (2252 KB)
+2026-03-25 02:38:18,115  INFO        Downloaded 20_155_2024-02-26.pdf  (1251 KB)
+2026-03-25 02:38:19,468  INFO        Downloaded 20_156_2024-03-14.pdf  (917 KB)
+2026-03-25 02:38:20,710  INFO        Downloaded 20_157_2024-03-19.pdf  (1841 KB)
+2026-03-25 02:38:21,809  INFO        Downloaded 20_158_2024-03-18.pdf  (606 KB)
+2026-03-25 02:38:23,295  INFO        Downloaded 20_159_2024-03-21.pdf  (1293 KB)
+2026-03-25 02:38:24,407  INFO        Downloaded 20_160_2024-03-26.pdf  (1861 KB)
+2026-03-25 02:38:25,509  INFO        Downloaded 20_161_2024-03-25.pdf  (761 KB)
+2026-03-25 02:38:26,868  INFO        Downloaded 20_162_2024-04-11.pdf  (1116 KB)
+2026-03-25 02:38:28,100  INFO        Downloaded 20_163_2024-04-16.pdf  (1566 KB)
+2026-03-25 02:38:29,210  INFO        Downloaded 20_164_2024-04-15.pdf  (1244 KB)
+2026-03-25 02:38:30,564  INFO        Downloaded 20_165_2024-04-25.pdf  (1186 KB)
+2026-03-25 02:38:31,796  INFO        Downloaded 20_166_2024-04-30.pdf  (1673 KB)
+2026-03-25 02:38:32,903  INFO        Downloaded 20_167_2024-04-29.pdf  (1015 KB)
+2026-03-25 02:38:34,262  INFO        Downloaded 20_168_2024-05-16.pdf  (1142 KB)
+2026-03-25 02:38:35,620  INFO        Downloaded 20_169_2024-05-22.pdf  (2903 KB)
+2026-03-25 02:38:36,598  INFO        Downloaded 20_170_2024-05-21.pdf  (858 KB)
+2026-03-25 02:38:37,960  INFO        Downloaded 20_171_2024-06-06.pdf  (1016 KB)
+2026-03-25 02:38:39,199  INFO        Downloaded 20_172_2024-06-11.pdf  (1944 KB)
+2026-03-25 02:38:40,300  INFO        Downloaded 20_173_2024-06-10.pdf  (756 KB)
+2026-03-25 02:38:41,662  INFO        Downloaded 20_174_2024-06-13.pdf  (1154 KB)
+2026-03-25 02:38:43,014  INFO        Downloaded 20_175_2024-06-18.pdf  (2473 KB)
+2026-03-25 02:38:43,998  INFO        Downloaded 20_176_2024-06-17.pdf  (998 KB)
+2026-03-25 02:38:45,358  INFO        Downloaded 20_177_2024-06-27.pdf  (1379 KB)
+2026-03-25 02:38:46,594  INFO        Downloaded 20_178_2024-07-02.pdf  (2075 KB)
+2026-03-25 02:38:47,698  INFO        Downloaded 20_179_2024-07-01.pdf  (922 KB)
+2026-03-25 02:38:49,058  INFO        Downloaded 20_180_2024-09-10.pdf  (1086 KB)
+2026-03-25 02:38:50,297  INFO        Downloaded 20_181_2024-09-09.pdf  (1863 KB)
+2026-03-25 02:38:51,398  INFO        Downloaded 20_182_2024-09-05.pdf  (1065 KB)
+2026-03-25 02:38:52,754  INFO        Downloaded 20_183_2024-09-11.pdf  (954 KB)
+2026-03-25 02:38:53,988  INFO        Downloaded 20_184_2024-09-12.pdf  (1039 KB)
+2026-03-25 02:38:55,226  INFO        Downloaded 20_185_2024-09-17.pdf  (1539 KB)
+2026-03-25 02:38:56,330  INFO        Downloaded 20_186_2024-09-16.pdf  (733 KB)
+2026-03-25 02:38:57,812  INFO        Downloaded 20_187_2024-09-26.pdf  (1093 KB)
+2026-03-25 02:38:58,929  INFO        Downloaded 20_188_2024-10-01.pdf  (2139 KB)
+2026-03-25 02:39:00,029  INFO        Downloaded 20_189_2024-09-30.pdf  (908 KB)
+2026-03-25 02:39:01,388  INFO        Downloaded 20_190_2024-10-10.pdf  (1143 KB)
+2026-03-25 02:39:02,623  INFO        Downloaded 20_191_2024-10-15.pdf  (1839 KB)
+2026-03-25 02:39:03,728  INFO        Downloaded 20_192_2024-10-14.pdf  (725 KB)
+2026-03-25 02:39:05,208  INFO        Downloaded 20_193_2024-10-17.pdf  (1237 KB)
+2026-03-25 02:39:06,324  INFO        Downloaded 20_194_2024-10-22.pdf  (2167 KB)
+2026-03-25 02:39:07,429  INFO        Downloaded 20_195_2024-11-12.pdf  (1510 KB)
+2026-03-25 02:39:08,783  INFO        Downloaded 20_196_2024-11-12.pdf  (1107 KB)
+2026-03-25 02:39:10,015  INFO        Downloaded 20_197_2024-11-08.pdf  (1207 KB)
+2026-03-25 02:39:11,122  INFO        Downloaded 20_198_2024-11-11.pdf  (493 KB)
+2026-03-25 02:39:12,608  INFO        Downloaded 20_199_2024-11-14.pdf  (1224 KB)
+2026-03-25 02:39:13,587  INFO        Downloaded 20_200_2024-11-15.pdf  (472 KB)
+2026-03-25 02:39:14,945  INFO        Downloaded 20_201_2024-11-18.pdf  (368 KB)
+2026-03-25 02:39:16,556  INFO        Downloaded 20_202_2024-12-05.pdf  (3305 KB)
+2026-03-25 02:39:17,296  INFO        Downloaded 20_203_2024-12-10.pdf  (2708 KB)
+2026-03-25 02:39:18,525  INFO        Downloaded 20_204_2024-12-10.pdf  (1040 KB)
+2026-03-25 02:39:19,756  INFO        Downloaded 20_205_2024-12-17.pdf  (485 KB)
+2026-03-25 02:39:21,373  INFO        Downloaded 20_206_2024-12-19.pdf  (2378 KB)
+2026-03-25 02:39:22,348  INFO        Downloaded 20_207_2025-01-06.pdf  (2325 KB)
+2026-03-25 02:39:23,455  INFO        Downloaded 20_208_2024-12-23.pdf  (1003 KB)
+2026-03-25 02:39:24,936  INFO        Downloaded 20_209_2025-02-04.pdf  (1596 KB)
+2026-03-25 02:39:26,053  INFO        Downloaded 20_210_2025-02-05.pdf  (2444 KB)
+2026-03-25 02:39:28,139  INFO        Downloaded 20_211_2025-02-03.pdf  (1387 KB)
+2026-03-25 02:39:28,753  INFO        Downloaded 20_212_2025-02-12.pdf  (534 KB)
+2026-03-25 02:39:30,226  INFO        Downloaded 20_213_2025-03-14.pdf  (546 KB)
+2026-03-25 02:39:31,460  INFO        Downloaded 20_214_2025-03-26.pdf  (977 KB)
+2026-03-25 02:39:31,465  INFO      Wrote index.json with 494 entries.
+2026-03-25 02:39:31,465  INFO      Summary written to bundestag_corpus/download_summary.txt

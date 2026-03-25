@@ -1,0 +1,30 @@
+======================================================================
+BUNDESTAG CORPUS DOWNLOAD SUMMARY
+Run date: 2026-03-25T02:39:31.465648Z
+======================================================================
+Total sessions checked (candidates):   494
+Successfully downloaded:               494
+Failed downloads:                      0
+
+Per-year breakdown:
+  2017: 45 PDF(s)
+  2018: 65 PDF(s)
+  2019: 70 PDF(s)
+  2020: 69 PDF(s)
+  2021: 31 PDF(s)
+  2022: 77 PDF(s)
+  2023: 65 PDF(s)
+  2024: 65 PDF(s)
+  2025: 7 PDF(s)
+
+Matched group distribution (sessions with each group):
+  Group A: 0
+  Group B: 0
+  Group C: 0
+  Group D: 0
+  Group E: 0
+
+⚠  WARNING: DIP API was unavailable. Keyword filtering was NOT applied.
+   All sessions in the date range were downloaded.
+   matched_terms and matched_groups are empty for all entries.
+   A second-pass keyword filter should be run after PDF text extraction.
