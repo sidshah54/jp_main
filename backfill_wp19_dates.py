@@ -25,7 +25,7 @@ DATE_PATTERN = re.compile(
 )
 
 
-def extract_date_from_pdf(pdf_path: Path) -> str | None:
+def extract_date_from_pdf(pdf_path: Path):
     try:
         reader = pypdf.PdfReader(str(pdf_path))
         text = reader.pages[0].extract_text() or ""
