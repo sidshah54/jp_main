@@ -133,7 +133,8 @@ def extract_passages():
             print(f"\nProcessing {year_folder.name}/ — {len(pdf_files)} PDFs")
 
             for pdf_path in pdf_files:
-                pdf_key = str(pdf_path)
+                # Use year/filename as key so it's stable regardless of CWD or path format
+                pdf_key = f"{year_folder.name}/{pdf_path.name}"
 
                 if pdf_key in completed:
                     print(f"  [skip] {pdf_path.name}")
