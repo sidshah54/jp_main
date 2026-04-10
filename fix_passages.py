@@ -252,24 +252,22 @@ def is_truncated(text: str) -> bool:
 # PDF LOOKUP & RE-EXTRACTION
 # ---------------------------------------------------------------------------
 
-def build_pdf_index(corpus_dir: Path) -> dict[tuple[str, int], Path]:
+def build_pdf_index(corpus_dir: Path) -> dict[str, Path]:
     """
     Read bundestag_corpus/index.json and build a lookup:
-        (date_str, session_int) → pdf_path
+        protocol_no (e.g. "18_244") → pdf_path
     """
     index_file = corpus_dir / "index.json"
     if not index_file.exists():
         return {}
     with open(index_file, encoding="utf-8") as fh:
         entries = json.load(fh)
-    lookup: dict[tuple[str, int], Path] = {}
+    lookup: dict[str, Path] = {}
     for e in entries:
-        date = e.get("date", "")
-        session = e.get("session")
+        eid = e.get("id", "")
         filename = e.get("filename", "")
-        if date and session is not None and filename:
-            pdf_path = corpus_dir / filename
-            lookup[(date, int(session))] = pdf_path
+        if eid and filename:
+            lookup[eid] = corpus_dir / filename
     return lookup
 
 
@@ -384,21 +382,15 @@ def extend_passage(
     Returns (new_text, was_extended, uncertain).
     """
     text = str(row["passage_text"])
-    date = str(row.get("date", ""))
-    session = row.get("session")
+    protocol_no = str(row.get("protocol_no", "")).strip()
 
-    if session is None:
+    if not protocol_no:
         return text, False, True
 
-    try:
-        session = int(session)
-    except (ValueError, TypeError):
-        return text, False, True
-
-    pdf_path = pdf_index.get((date, session))
+    pdf_path = pdf_index.get(protocol_no)
     if pdf_path is None or not pdf_path.exists():
         if verbose:
-            print(f"  [WARN] PDF not found for date={date} session={session}", file=sys.stderr)
+            print(f"  [WARN] PDF not found for protocol_no={protocol_no}", file=sys.stderr)
         return text, False, True
 
     pages = extract_pages_text(pdf_path)
