@@ -200,11 +200,68 @@ def repair_question_mark_umlauts(text: str) -> tuple[str, int]:
     return text, count
 
 
+def fix_mac_roman_corruption(text: str) -> tuple[str, int]:
+    """
+    Fix UTF-8 text that was incorrectly decoded as Mac Roman.
+
+    In Mac Roman, byte 0xC3 (the UTF-8 lead byte for all German umlauts)
+    maps to U+221A (√). So each umlaut appears as √ followed by another
+    corrupted character, e.g.:
+        ä (0xC3 0xA4) → √§
+        ö (0xC3 0xB6) → √∂
+        ü (0xC3 0xBC) → √º
+
+    3-byte UTF-8 sequences (dashes, quotes) have 0xE2 as lead byte, which
+    maps to U+201A (‚) in Mac Roman, e.g.:
+        – (en dash,  0xE2 0x80 0x93) → ‚Äì
+        — (em dash,  0xE2 0x80 0x94) → ‚Äî
+        • (bullet,   0xE2 0x80 0xA2) → ‚Ä¢
+
+    Fix: re-encode each corrupted sequence as Mac Roman bytes, then decode
+    as UTF-8.
+    """
+    # Mac Roman chars that are lead bytes of multi-byte UTF-8 sequences
+    LEAD_2 = "\u221a"   # √  = MacRoman 0xC3 (lead byte of 2-byte UTF-8)
+    LEAD_3 = "\u201a"   # ‚  = MacRoman 0xE2 (lead byte of 3-byte UTF-8)
+
+    count = 0
+    result: list[str] = []
+    i = 0
+    while i < len(text):
+        c = text[i]
+        # Try 3-byte sequence first (‚XX)
+        if c == LEAD_3 and i + 2 < len(text):
+            triple = text[i : i + 3]
+            try:
+                fixed = triple.encode("mac_roman").decode("utf-8")
+                result.append(fixed)
+                count += 1
+                i += 3
+                continue
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                pass
+        # Try 2-byte sequence (√X)
+        if c == LEAD_2 and i + 1 < len(text):
+            pair = text[i : i + 2]
+            try:
+                fixed = pair.encode("mac_roman").decode("utf-8")
+                result.append(fixed)
+                count += 1
+                i += 2
+                continue
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                pass
+        result.append(c)
+        i += 1
+    return "".join(result), count
+
+
 def fix_umlauts(text: str) -> tuple[str, int]:
     """Run all umlaut repair passes. Returns (fixed_text, total_fixes)."""
-    text, n1 = repair_encoding_patterns(text)
-    text, n2 = repair_question_mark_umlauts(text)
-    return text, n1 + n2
+    text, n1 = fix_mac_roman_corruption(text)
+    text, n2 = repair_encoding_patterns(text)
+    text, n3 = repair_question_mark_umlauts(text)
+    return text, n1 + n2 + n3
 
 
 # ---------------------------------------------------------------------------
