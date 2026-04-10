@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """
 fix_passages.py — Fix passages_final.csv extracted from Bundestag PDFs.
 
