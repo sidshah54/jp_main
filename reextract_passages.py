@@ -242,24 +242,79 @@ def find_next_speaker_offset(text: str, start: int) -> int:
     return m.start() if m else -1
 
 
+def find_passage_by_fingerprint(page_text: str, original_text: str) -> int:
+    """
+    Locate the passage start in `page_text` using distinctive words from
+    `original_text` as a fingerprint.
+
+    Strategy: take the first 8+ meaningful words (>=4 chars) from the body
+    of the original passage (after stripping the speaker line), then search
+    for any 3-consecutive-word window in the column-correctly ordered page
+    text.  Return the start-of-line offset of the match, or -1.
+
+    This allows accurate extraction even when the speaker name is unknown or
+    misspelled — we find the right location by content, not by name.
+    """
+    if not original_text:
+        return -1
+
+    # Strip the speaker line at the top of the original text
+    body = SPEAKER_LINE_RE.sub('', original_text, count=1).strip()
+    if not body:
+        return -1
+
+    # Collect meaningful words (letters only, length >= 4, skip stopwords)
+    _STOPWORDS = {'dass', 'aber', 'auch', 'oder', 'eine', 'einen', 'einem',
+                  'einer', 'nicht', 'wird', 'wird', 'haben', 'sind', 'kann',
+                  'wird', 'muss', 'mehr', 'noch', 'sehr', 'über', 'sich',
+                  'sein', 'beim', 'dies', 'damit', 'doch', 'dann', 'jetzt'}
+    words = [w for w in re.findall(r'\b[A-Za-zÄÖÜäöüß]{4,}\b', body)
+             if w.lower() not in _STOPWORDS]
+
+    if len(words) < 3:
+        return -1
+
+    # Try sliding windows of 3 words, up to the first 12 words
+    for i in range(min(len(words) - 2, 10)):
+        phrase_pat = r'\s+'.join(re.escape(w) for w in words[i:i + 3])
+        m = re.search(phrase_pat, page_text, re.IGNORECASE)
+        if m:
+            # Walk back to the nearest line beginning or speaker marker before match
+            line_start = page_text.rfind('\n', 0, m.start()) + 1
+            # If there's a speaker marker on the same line or just before, use that
+            snippet = page_text[max(0, line_start - 200): m.start()]
+            sm = None
+            for sm in SPEAKER_LINE_RE.finditer(snippet):
+                pass  # keep last match
+            if sm:
+                return line_start - 200 + sm.start()
+            return line_start
+
+    return -1
+
+
 # ---------------------------------------------------------------------------
 # Core extraction
 # ---------------------------------------------------------------------------
 
 def extract_passage(pdf_path: str, page_no: int, variants: list,
+                    original_text: str = '',
                     debug: bool = False) -> tuple:
     """
     Extract the passage for the given speaker (name variants) from the PDF.
 
     Args:
-        pdf_path:  absolute path to the PDF file.
-        page_no:   1-indexed page number.
-        variants:  ordered list of name strings to try (from speaker_variants()).
-        debug:     if True, print page content on speaker_not_found.
+        pdf_path:      absolute path to the PDF file.
+        page_no:       1-indexed page number.
+        variants:      ordered list of name strings to try (from speaker_variants()).
+        original_text: existing passage_text from backup (used as fingerprint
+                       fallback when speaker name lookup fails).
+        debug:         if True, print page content on speaker_not_found.
 
     Returns:
         (passage_text, flag)
-        flag: '' = success, 'check' = incomplete, 'speaker_not_found', 'pdf_not_found'
+        flag: '' = success, 'check' = incomplete/fingerprint,
+              'speaker_not_found', 'pdf_not_found'
     """
     if not os.path.isfile(pdf_path):
         return ('', 'pdf_not_found')
@@ -280,13 +335,19 @@ def extract_passage(pdf_path: str, page_no: int, variants: list,
         page_text = extract_page_text(page)
 
         speaker_offset = find_speaker_offset_all_variants(page_text, variants)
+        used_fingerprint = False
 
         if speaker_offset < 0:
-            if debug:
-                print(f"\n    [DEBUG] Page {page_no} text (first 1500 chars):\n")
-                print(page_text[:1500])
-                print()
-            return ('', 'speaker_not_found')
+            # Fallback: locate passage by content fingerprint from original text
+            speaker_offset = find_passage_by_fingerprint(page_text, original_text)
+            if speaker_offset >= 0:
+                used_fingerprint = True
+            else:
+                if debug:
+                    print(f"\n    [DEBUG] Page {page_no} text (first 1500 chars):\n")
+                    print(page_text[:1500])
+                    print()
+                return ('', 'speaker_not_found')
 
         # Slice from speaker start to next speaker on same page
         next_offset = find_next_speaker_offset(page_text, speaker_offset + 1)
@@ -315,7 +376,11 @@ def extract_passage(pdf_path: str, page_no: int, variants: list,
             if first_speaker >= 0:
                 break
 
-        flag = '' if ends_with_terminal(passage) else 'check'
+        # Fingerprint matches are always 'check' — boundaries may be approximate
+        if used_fingerprint:
+            flag = 'check'
+        else:
+            flag = '' if ends_with_terminal(passage) else 'check'
         return (passage, flag)
 
 
@@ -417,9 +482,14 @@ def main():
         variants = speaker_variants(speaker)
 
         # ------------------------------------------------------------------
-        # Extract
+        # Extract  (pass original text as fingerprint fallback)
         # ------------------------------------------------------------------
-        passage_text, flag = extract_passage(pdf_path, page_no, variants, debug=debug)
+        orig_passage = backup_by_id.get(str(passage_id), {}).get('passage_text', '')
+        passage_text, flag = extract_passage(
+            pdf_path, page_no, variants,
+            original_text=orig_passage,
+            debug=debug,
+        )
 
         # ------------------------------------------------------------------
         # Outcome accounting
@@ -427,9 +497,9 @@ def main():
         if flag in ('pdf_not_found', 'speaker_not_found'):
             outcome = f'ERROR: {flag}'
             errors += 1
-            # Do NOT overwrite passage_text on error
+            # Do NOT overwrite passage_text on error — keep original
         elif flag == 'check':
-            outcome = 'flagged (no terminal punct)'
+            outcome = 'flagged (check boundaries)'
             flagged += 1
             row['passage_text'] = passage_text
         else:
