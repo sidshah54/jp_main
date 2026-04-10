@@ -14,6 +14,9 @@ Usage:
         --csv /path/to/passages_final.csv \
         --corpus /path/to/bundestag_corpus \
         --index /path/to/bundestag_corpus/index.json
+
+Optional:
+    --debug    Print page content when speaker cannot be located (verbose)
 """
 
 import argparse
@@ -57,21 +60,99 @@ HYPHEN_RE = re.compile(r'(\w)-\n(\w)')
 # Terminal punctuation characters
 TERMINAL_CHARS = {'.', '?', '!', ')'}
 
+# Academic title prefixes to strip when trying name variants
+TITLE_PREFIX_RE = re.compile(
+    r'^(?:(?:Dr|Prof|Prof\. Dr|Drs|Dipl|Dr\.-Ing|PD Dr|Prof\.)\.\s+)+'
+)
+
 # ---------------------------------------------------------------------------
-# Helpers
+# Speaker name normalisation
 # ---------------------------------------------------------------------------
 
-def load_index(index_path: str) -> dict:
-    """Return {id: filename} from index.json."""
-    with open(index_path, 'r', encoding='utf-8') as f:
-        entries = json.load(f)
-    return {entry['id']: entry['filename'] for entry in entries}
+def _fix_camelcase(name: str) -> str:
+    """Insert a space between a lowercase letter and an uppercase letter.
+    Handles 'JuliaVerlinden' -> 'Julia Verlinden'.
+    Does not affect existing spaces or title dots.
+    """
+    return re.sub(r'([a-zäöü])([A-ZÄÖÜ])', r'\1 \2', name)
 
+
+def speaker_variants(speaker: str) -> list:
+    """
+    Return a prioritised list of name strings to try matching in the PDF.
+
+    Handles:
+      - Compound names joined by ' and ': try each sub-name independently.
+      - Missing CamelCase spaces: 'Dr. JuliaVerlinden' -> 'Dr. Julia Verlinden'.
+      - Title-stripped forms: 'Reinhard Brandle' alongside 'Dr. Reinhard Brandle'.
+      - Last-name-only form as final fallback.
+    """
+    if not speaker or speaker.upper() == 'UNKNOWN':
+        return []
+
+    # Split compound names: "Bernd Westphal and Reinhard Houben"
+    if ' and ' in speaker:
+        parts = [p.strip() for p in speaker.split(' and ')]
+        result = []
+        for p in parts:
+            result.extend(speaker_variants(p))
+        return result
+
+    variants = []
+    seen = set()
+
+    def _add(v):
+        v = v.strip()
+        if v and v not in seen:
+            seen.add(v)
+            variants.append(v)
+
+    original = speaker.strip()
+    _add(original)
+
+    # CamelCase fix
+    fixed = _fix_camelcase(original)
+    _add(fixed)
+
+    # Title-stripped versions of both
+    for candidate in list(variants):
+        no_title = TITLE_PREFIX_RE.sub('', candidate).strip()
+        _add(no_title)
+
+    # Last name only (last whitespace-separated token of the title-stripped form)
+    base = TITLE_PREFIX_RE.sub('', fixed).strip()
+    last_name = base.split()[-1] if base else ''
+    if len(last_name) > 2:
+        _add(last_name)
+
+    return variants
+
+
+def extract_speaker_from_text(text: str) -> str:
+    """
+    Given an existing (possibly scrambled) passage_text, try to recover the
+    speaker's name by finding the first speaker-line pattern in the first 600
+    characters and returning just the name part (before the party tag).
+    """
+    if not text:
+        return ''
+    m = SPEAKER_LINE_RE.search(text[:600])
+    if not m:
+        return ''
+    line = m.group(1)
+    # Strip the trailing (FRAKTION): part
+    name = re.sub(r'\s*\([^)]+\)\s*:.*$', '', line).strip()
+    return name if name else ''
+
+
+# ---------------------------------------------------------------------------
+# PDF helpers
+# ---------------------------------------------------------------------------
 
 def extract_page_text(page) -> str:
     """
-    Extract body text from a pdfplumber page using column-aware cropping.
-    Returns left_col + newline + right_col.
+    Column-aware extraction: crop at y=HEADER_Y, split at width/2.
+    Returns left column text followed by right column text.
     """
     width = page.width
     height = page.height
@@ -83,28 +164,17 @@ def extract_page_text(page) -> str:
 def postprocess(text: str) -> str:
     """
     Clean extracted text:
-      1. Rejoin hyphenated line-breaks.
-      2. Strip standalone quadrant markers (A), (B), (C), (D).
+      1. Rejoin hyphenated line-breaks ('Versor-\\ngung' -> 'Versorgung').
+      2. Strip standalone quadrant markers (A)–(D).
       3. Remove running header lines.
-      4. Normalize whitespace (collapse spaces, preserve paragraph breaks).
+      4. Normalise whitespace (collapse spaces, preserve paragraph breaks).
     """
-    # 1. Rejoin hyphenated line-breaks: 'Versor-\ngung' -> 'Versorgung'
     text = HYPHEN_RE.sub(r'\1\2', text)
-
-    # 2. Remove standalone quadrant markers on their own line
     text = QUADRANT_RE.sub('', text)
-    # Also remove inline quadrant markers not part of a word
     text = QUADRANT_INLINE_RE.sub('', text)
-
-    # 3. Remove running header text
     text = HEADER_TEXT_RE.sub('', text)
 
-    # 4. Collapse multiple spaces to single space, but keep newlines
-    lines = []
-    for line in text.split('\n'):
-        line = re.sub(r'  +', ' ', line).strip()
-        lines.append(line)
-    # Collapse runs of blank lines to a single blank line (paragraph break)
+    lines = [re.sub(r'  +', ' ', line).strip() for line in text.split('\n')]
     result_lines = []
     prev_blank = False
     for line in lines:
@@ -120,93 +190,84 @@ def postprocess(text: str) -> str:
 
 
 def ends_with_terminal(text: str) -> bool:
-    """Return True if text ends with terminal punctuation (ignoring whitespace)."""
+    """True if text ends with terminal punctuation (ignoring trailing whitespace)."""
     stripped = text.rstrip()
-    if not stripped:
-        return False
-    return stripped[-1] in TERMINAL_CHARS
+    return bool(stripped) and stripped[-1] in TERMINAL_CHARS
 
 
-def find_speaker_offset(full_page_text: str, speaker: str) -> int:
+def find_speaker_offset(page_text: str, name_variant: str) -> int:
     """
-    Return the character offset where the speaker's passage begins.
-    Strategy:
-      1. Try full speaker name match (case-insensitive).
-      2. Try last name only.
-      3. Return -1 if not found.
+    Search for a single name variant in page_text.
+    Returns the character offset of the matching speaker line, or -1.
     """
-    if not speaker:
+    if not name_variant:
         return -1
 
-    speaker_clean = speaker.strip()
+    # Anchored at line start, followed by optional middle-name tokens,
+    # then (FRAKTION):
+    pat = re.compile(
+        r'(?m)^' + re.escape(name_variant) + r'[^\n]*\([A-ZÄÖÜ][^\n)]*\)\s*:',
+        re.IGNORECASE | re.UNICODE
+    )
+    m = pat.search(page_text)
+    if m:
+        return m.start()
 
-    # Build a regex that looks for the speaker name followed by optional title/space
-    # and then (FRAKTION): pattern
-    def _try_pattern(name_pattern: str) -> int:
-        pat = re.compile(
-            r'(?m)^' + re.escape(name_pattern) + r'[^\n]*\([A-ZÄÖÜ][^\n)]*\)\s*:',
+    # If name_variant is a single token (last name), allow it to appear
+    # anywhere on the line (not just at the very start)
+    if ' ' not in name_variant and len(name_variant) > 2:
+        pat2 = re.compile(
+            r'(?m)^[^\n]*\b' + re.escape(name_variant) + r'\b[^\n]*\([A-ZÄÖÜ][^\n)]*\)\s*:',
             re.IGNORECASE | re.UNICODE
         )
-        m = pat.search(full_page_text)
-        if m:
-            return m.start()
-        return -1
+        m2 = pat2.search(page_text)
+        if m2:
+            return m2.start()
 
-    # 1. Full name
-    offset = _try_pattern(speaker_clean)
-    if offset >= 0:
-        return offset
+    return -1
 
-    # 2. Try stripping titles and matching last part
-    # Remove academic titles
-    name_no_title = re.sub(
-        r'^(?:(?:Dr|Prof|Prof\. Dr|Drs|Dipl|Dr\.-Ing|PD Dr|Prof\.)\.\s+)+',
-        '', speaker_clean
-    ).strip()
-    if name_no_title != speaker_clean:
-        offset = _try_pattern(name_no_title)
+
+def find_speaker_offset_all_variants(page_text: str, variants: list) -> int:
+    """Try each name variant in order; return the first match offset, or -1."""
+    for v in variants:
+        offset = find_speaker_offset(page_text, v)
         if offset >= 0:
             return offset
-
-    # 3. Last name only (last word of the name)
-    last_name = speaker_clean.split()[-1] if speaker_clean else ''
-    if last_name:
-        pat = re.compile(
-            r'(?m)^[^\n]*' + re.escape(last_name) + r'[^\n]*\([A-ZÄÖÜ][^\n)]*\)\s*:',
-            re.IGNORECASE | re.UNICODE
-        )
-        m = pat.search(full_page_text)
-        if m:
-            return m.start()
-
     return -1
 
 
 def find_next_speaker_offset(text: str, start: int) -> int:
-    """
-    Return the offset of the next speaker marker after `start`, or -1.
-    """
+    """Return the offset of the next speaker marker after `start`, or -1."""
     m = SPEAKER_LINE_RE.search(text, start)
-    if m:
-        return m.start()
-    return -1
+    return m.start() if m else -1
 
 
-def extract_passage(pdf_path: str, page_no: int, speaker: str) -> tuple:
+# ---------------------------------------------------------------------------
+# Core extraction
+# ---------------------------------------------------------------------------
+
+def extract_passage(pdf_path: str, page_no: int, variants: list,
+                    debug: bool = False) -> tuple:
     """
-    Extract passage text for the given speaker starting at page_no (1-indexed).
+    Extract the passage for the given speaker (name variants) from the PDF.
+
+    Args:
+        pdf_path:  absolute path to the PDF file.
+        page_no:   1-indexed page number.
+        variants:  ordered list of name strings to try (from speaker_variants()).
+        debug:     if True, print page content on speaker_not_found.
 
     Returns:
-        (passage_text: str, flag: str)
-        flag is '' (success), 'check' (incomplete), 'speaker_not_found', or 'pdf_not_found'.
+        (passage_text, flag)
+        flag: '' = success, 'check' = incomplete, 'speaker_not_found', 'pdf_not_found'
     """
     if not os.path.isfile(pdf_path):
         return ('', 'pdf_not_found')
 
     try:
         pdf = pdfplumber.open(pdf_path)
-    except Exception as e:
-        return ('', f'pdf_not_found')
+    except Exception:
+        return ('', 'pdf_not_found')
 
     with pdf:
         total_pages = len(pdf.pages)
@@ -215,49 +276,42 @@ def extract_passage(pdf_path: str, page_no: int, speaker: str) -> tuple:
         if zero_idx < 0 or zero_idx >= total_pages:
             return ('', 'pdf_not_found')
 
-        # --- Extract starting page ---
         page = pdf.pages[zero_idx]
         page_text = extract_page_text(page)
 
-        speaker_offset = find_speaker_offset(page_text, speaker)
+        speaker_offset = find_speaker_offset_all_variants(page_text, variants)
+
         if speaker_offset < 0:
+            if debug:
+                print(f"\n    [DEBUG] Page {page_no} text (first 1500 chars):\n")
+                print(page_text[:1500])
+                print()
             return ('', 'speaker_not_found')
 
-        # Find where this speaker's passage ends (next speaker on same page)
-        next_speaker_offset = find_next_speaker_offset(page_text, speaker_offset + 1)
-        if next_speaker_offset >= 0:
-            passage = page_text[speaker_offset:next_speaker_offset]
+        # Slice from speaker start to next speaker on same page
+        next_offset = find_next_speaker_offset(page_text, speaker_offset + 1)
+        if next_offset >= 0:
+            passage = page_text[speaker_offset:next_offset]
         else:
             passage = page_text[speaker_offset:]
 
         passage = postprocess(passage)
 
-        # --- Continuation pages if passage ends mid-sentence ---
-        extra_pages = 0
-        current_page_idx = zero_idx
-
-        while not ends_with_terminal(passage) and extra_pages < MAX_EXTRA_PAGES:
-            current_page_idx += 1
-            if current_page_idx >= total_pages:
+        # Continuation pages when passage ends mid-sentence
+        current_idx = zero_idx
+        for _ in range(MAX_EXTRA_PAGES):
+            if ends_with_terminal(passage):
+                break
+            current_idx += 1
+            if current_idx >= total_pages:
                 break
 
-            next_page = pdf.pages[current_page_idx]
-            next_page_text = extract_page_text(next_page)
-
-            # Find first speaker marker on the continuation page
-            first_speaker = find_next_speaker_offset(next_page_text, 0)
-            if first_speaker >= 0:
-                continuation = next_page_text[:first_speaker]
-            else:
-                continuation = next_page_text
-
+            cont_text = extract_page_text(pdf.pages[current_idx])
+            first_speaker = find_next_speaker_offset(cont_text, 0)
+            continuation = cont_text[:first_speaker] if first_speaker >= 0 else cont_text
             continuation = postprocess(continuation)
             if continuation:
                 passage = passage.rstrip('\n') + '\n' + continuation
-
-            extra_pages += 1
-
-            # If a speaker was found, this page ends the continuation
             if first_speaker >= 0:
                 break
 
@@ -270,27 +324,34 @@ def extract_passage(pdf_path: str, page_no: int, speaker: str) -> tuple:
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Re-extract passage_text from Bundestag PDFs.')
-    parser.add_argument('--csv', required=True, help='Path to passages_final.csv')
+    parser = argparse.ArgumentParser(
+        description='Re-extract passage_text from Bundestag PDFs using column-aware cropping.'
+    )
+    parser.add_argument('--csv',    required=True, help='Path to passages_final.csv')
     parser.add_argument('--corpus', required=True, help='Path to bundestag_corpus directory')
-    parser.add_argument('--index', required=True, help='Path to index.json')
+    parser.add_argument('--index',  required=True, help='Path to index.json')
+    parser.add_argument('--debug',  action='store_true',
+                        help='Print page content when speaker cannot be located')
     args = parser.parse_args()
 
-    csv_path = args.csv
+    csv_path   = args.csv
     corpus_dir = args.corpus
     index_path = args.index
+    debug      = args.debug
 
-    # Validate inputs
+    # Validate
     for path, label in [(csv_path, 'CSV'), (corpus_dir, 'corpus dir'), (index_path, 'index.json')]:
         if not os.path.exists(path):
             sys.exit(f"ERROR: {label} not found at: {path}")
 
-    # Load index
+    # Load PDF index
     print("Loading index.json...")
-    index = load_index(index_path)
-    print(f"  Loaded {len(index)} protocol entries.\n")
+    with open(index_path, 'r', encoding='utf-8') as f:
+        index_entries = json.load(f)
+    pdf_index = {e['id']: e['filename'] for e in index_entries}
+    print(f"  Loaded {len(pdf_index)} protocol entries.\n")
 
-    # Backup CSV
+    # Backup CSV (once; never overwrite an existing backup)
     backup_path = csv_path.replace('.csv', '_backup_preextract.csv')
     if not os.path.exists(backup_path):
         shutil.copy2(csv_path, backup_path)
@@ -298,58 +359,75 @@ def main():
     else:
         print(f"Backup already exists at: {backup_path} (skipping overwrite)\n")
 
-    # Read CSV
+    # Read backup to recover original passage_text for UNKNOWN-speaker rows
+    backup_by_id: dict = {}
+    with open(backup_path, 'r', encoding='utf-8', newline='') as f:
+        for brow in csv.DictReader(f):
+            pid = brow.get('passage_id') or brow.get('id', '')
+            backup_by_id[pid] = brow
+
+    # Read working CSV
     with open(csv_path, 'r', encoding='utf-8', newline='') as f:
         reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames or []
+        fieldnames = list(reader.fieldnames or [])
         rows = list(reader)
 
     if not rows:
         sys.exit("ERROR: CSV is empty.")
 
-    # Ensure extraction_flag column exists
     if 'extraction_flag' not in fieldnames:
-        fieldnames = list(fieldnames) + ['extraction_flag']
+        fieldnames.append('extraction_flag')
 
-    # Statistics
     total = len(rows)
-    successful = 0
-    flagged = 0
-    errors = 0
+    successful = flagged = errors = 0
 
     print(f"Processing {total} rows...\n")
-    print(f"{'Row':<6} {'passage_id':<20} {'speaker':<35} {'outcome'}")
-    print("-" * 85)
 
     for i, row in enumerate(rows):
-        row_num = i + 1
-        passage_id = row.get('passage_id', row.get('id', f'row_{row_num}'))
-        speaker = row.get('speaker', '').strip()
-        protocol_no = row.get('protocol_no', '').strip()
+        row_num    = i + 1
+        passage_id = row.get('passage_id') or row.get('id') or f'row_{row_num}'
+        speaker    = (row.get('speaker') or '').strip()
+        protocol_no = (row.get('protocol_no') or '').strip()
 
-        # Determine page number
         try:
             page_no = int(row.get('page_no', 1))
         except (ValueError, TypeError):
             page_no = 1
 
         # Resolve PDF path
-        filename = index.get(protocol_no)
+        filename = pdf_index.get(protocol_no)
         if filename:
             pdf_path = os.path.join(corpus_dir, filename)
         else:
-            # Try constructing path directly from protocol_no
             pdf_path = os.path.join(corpus_dir, f"{protocol_no}.pdf")
 
-        # Extract passage
-        passage_text, flag = extract_passage(pdf_path, page_no, speaker)
+        # ------------------------------------------------------------------
+        # Resolve UNKNOWN speaker from original passage_text in backup
+        # ------------------------------------------------------------------
+        resolved_note = ''
+        if not speaker or speaker.upper() == 'UNKNOWN':
+            orig = backup_by_id.get(str(passage_id), {})
+            orig_text = orig.get('passage_text', '')
+            recovered = extract_speaker_from_text(orig_text)
+            if recovered:
+                speaker = recovered
+                resolved_note = f' [resolved from backup: {speaker}]'
 
-        # Determine outcome label for logging
+        # Build name variants
+        variants = speaker_variants(speaker)
+
+        # ------------------------------------------------------------------
+        # Extract
+        # ------------------------------------------------------------------
+        passage_text, flag = extract_passage(pdf_path, page_no, variants, debug=debug)
+
+        # ------------------------------------------------------------------
+        # Outcome accounting
+        # ------------------------------------------------------------------
         if flag in ('pdf_not_found', 'speaker_not_found'):
             outcome = f'ERROR: {flag}'
             errors += 1
-            # Leave passage_text unchanged on error
-            # (don't overwrite with empty string)
+            # Do NOT overwrite passage_text on error
         elif flag == 'check':
             outcome = 'flagged (no terminal punct)'
             flagged += 1
@@ -361,9 +439,9 @@ def main():
 
         row['extraction_flag'] = flag
 
-        # Log
-        speaker_display = (speaker[:32] + '...') if len(speaker) > 35 else speaker
-        print(f"{row_num:<6} {str(passage_id):<20} {speaker_display:<35} {outcome}")
+        speaker_display = (speaker[:40] + '…') if len(speaker) > 42 else speaker
+        print(f"[{row_num}/{total}] passage_id={passage_id} "
+              f"speaker={speaker_display}{resolved_note} -> {outcome}")
 
     # Write updated CSV
     with open(csv_path, 'w', encoding='utf-8', newline='') as f:
@@ -371,14 +449,14 @@ def main():
         writer.writeheader()
         writer.writerows(rows)
 
-    # Final summary
-    print("\n" + "=" * 85)
-    print("EXTRACTION SUMMARY")
-    print("=" * 85)
-    print(f"  Total rows:               {total}")
-    print(f"  Successful:               {successful}")
-    print(f"  Flagged for manual check: {flagged}")
-    print(f"  Errors (pdf/speaker):     {errors}")
+    # Summary
+    print("\n" + "=" * 70)
+    print("=== SUMMARY ===")
+    print("=" * 70)
+    print(f"  Total rows:          {total}")
+    print(f"  Successful:          {successful}")
+    print(f"  Flagged (check):     {flagged}")
+    print(f"  Errors:              {errors}")
     print(f"\nOutput written to: {csv_path}")
     print(f"Backup preserved:  {backup_path}")
 
